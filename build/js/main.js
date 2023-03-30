@@ -67,6 +67,46 @@ var reviews = new Swiper('.reviews .swiper-container', {
     }
   }
 });
+var platforms = new Swiper('.platforms .swiper-container', {
+  slidesPerView: 2,
+  slidesPerGroup: 2,
+  spaceBetween: 24,
+  loop: true,
+  breakpoints: {
+    1280: {
+      slidesPerView: 4,
+      slidesPerGroup: 4
+    },
+    768: {
+      slidesPerView: 3,
+      slidesPerGroup: 3
+    }
+  },
+  pagination: {
+    el: '.platforms .swiper-pagination',
+    clickable: true
+  }
+});
+var clients = new Swiper('.clients .swiper-container', {
+  slidesPerView: 3,
+  slidesPerGroup: 3,
+  spaceBetween: 24,
+  loop: true,
+  breakpoints: {
+    1280: {
+      slidesPerView: 5,
+      slidesPerGroup: 5
+    },
+    768: {
+      slidesPerView: 4,
+      slidesPerGroup: 4
+    }
+  },
+  navigation: {
+    nextEl: '.clients .swiper-button-next',
+    prevEl: '.clients .swiper-button-prev'
+  }
+});
 $('body').on('click', '.header__search button', function (e) {
   $('.header__search').toggleClass('active');
   $(document).mouseup(function (e) {
