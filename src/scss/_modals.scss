@@ -1,0 +1,308 @@
+$trans: all 0.2s ease-in-out;
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(#282a31, 0.9);
+    opacity: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+    transition: $trans;
+
+    &.active {
+        opacity: 1;
+        z-index: 30;
+    }
+
+    &.zindex {
+        z-index: 99999;
+    }
+}
+
+.modal {
+    @include r(767) {
+        width: 100%;
+        margin: 0 15px;
+        overflow: scroll;
+        padding: 30px 20px;
+    }
+
+    display: none;
+    opacity: 0;
+    cursor: default;
+    position: relative;
+
+    max-width: 95%;
+    width: 658px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 11px;
+        left: 11px;
+        width: 100%;
+        height: 100%;
+        border: 16px solid #ffcc24;
+    }
+
+    &.active {
+        display: block;
+        opacity: 1;
+    }
+
+    &__content {
+        overflow: hidden;
+        background: #fff;
+        position: relative;
+        z-index: 2;
+        padding: 40px 69px;
+        overflow-y: auto;
+        max-height: 90vh;
+        -webkit-overflow-scrolling: touch;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border: 1px solid #bdbdbd;
+            margin-left: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #fff;
+            border: 1px solid #bdbdbd;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #000;
+        }
+    }
+
+    &__close {
+        @include r(767) {
+            width: 23px;
+            height: 23px;
+
+            svg {
+                width: 23px;
+                height: 23px;
+            }
+        }
+
+        position: absolute;
+        right: 17px;
+        top: 17px;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: $trans;
+
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__header {
+        @include r(767) {
+            display: block;
+            font-size: 27px;
+        }
+
+        @include r(413) {
+            display: block;
+            font-size: 22px;
+        }
+
+        margin-bottom: 5px;
+        text-align: center;
+        font-weight: 800;
+        font-size: 34px;
+        position: relative;
+        z-index: 1;
+        color: #292929;
+    }
+
+    &__subtitle {
+        @include r(767) {
+            margin-bottom: 20px;
+        }
+
+        @include r(413) {
+            font-size: 14px;
+        }
+
+        text-align: center;
+        color: rgba(41, 41, 41, 0.68);
+        margin-bottom: 39px;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__text {
+        @include r(767) {
+            font-size: 16px;
+
+            br {
+                display: none;
+            }
+        }
+
+        font-weight: 500;
+        font-size: 21px;
+        text-align: center;
+    }
+
+    .form-group {
+        @include r(767) {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 29px;
+        position: relative;
+        z-index: 1;
+
+        & > div,
+        & > input {
+            @include r(767) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            width: 47%;
+
+            input {
+                margin-bottom: 17px;
+                width: 100%;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    textarea,
+    input {
+        padding: 17px 24px;
+    }
+
+    textarea {
+        height: 100%;
+    }
+
+    .checkbox {
+        @include r(767) {
+            font-size: 10px;
+
+            br {
+                display: none;
+            }
+        }
+
+        display: inline-block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        position: relative;
+        z-index: 1;
+
+        label {
+            display: block;
+        }
+    }
+
+    .btn {
+        @include r(767) {
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            width: 100%;
+            justify-content: center;
+        }
+
+        margin-top: 29px;
+        font-size: 17px;
+        padding: 20px 49px;
+        position: relative;
+        z-index: 1;
+    }
+
+    .ornament {
+        @include r(757) {
+            display: none;
+        }
+
+        position: absolute;
+        left: 41px;
+        top: -40px;
+        width: 133px;
+        pointer-events: none;
+        user-select: none;
+        z-index: 3;
+    }
+
+    &[data-modal='rent'] {
+        width: 696px;
+
+        textarea {
+            height: 109px;
+            margin-bottom: 15px;
+        }
+    }
+
+    &[data-modal='thanks'] {
+        @include r(767) {
+            min-width: auto;
+            width: 95%;
+        }
+
+        text-align: center;
+        width: 560px;
+
+        &::before {
+            display: none;
+        }
+
+        .modal__content {
+            background: linear-gradient(90deg, #ffcc24 0, #ffe489 100%);
+        }
+
+        & > svg {
+            width: 32px;
+
+            &.animate {
+                path {
+                    stroke-dashoffset: 0 !important;
+                }
+            }
+
+            path {
+                fill: none;
+                stroke: #000;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 3px;
+                transition: all 0.6s ease-in-out;
+
+                &.circle {
+                    stroke-dasharray: 83.60540771484375;
+                    stroke-dashoffset: 83.60540771484375;
+                }
+
+                &.arrow {
+                    stroke-dasharray: 29.41564178466797;
+                    stroke-dashoffset: -29.41564178466797;
+                }
+            }
+        }
+    }
+}

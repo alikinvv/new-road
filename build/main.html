@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="css/daterangepicker.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -46,16 +48,68 @@
     </div>
 </section>
 
+<section class="top">
+    <div class="container">
+        <div class="top__city" data-modal="region">
+            Москва <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg>
+        </div>
+        <div class="top__addr">
+            <div>Москва, ш. Дмитровское, д. 107, к. 2</div>
+            <div>ежедневно с 8:00 до 21:00</div>
+        </div>
+        <div class="top__social">
+            <div class="social">
+                <a href="javascript:">
+                    <img src="img/icons/whatsapp.svg" alt="" />
+                </a>
+                <a href="javascript:">
+                    <img src="img/icons/telegram.svg" alt="" />
+                </a>
+                <a href="javascript:">
+                    <img src="img/icons/viber.svg" alt="" />
+                </a>
+            </div>
+            <a href="mailto:info@newroad.ru">info@newroad.ru</a>    
+        </div>
+        <div class="top__phones">
+            <a href="tel:+7 (495) 740-05-28" class="top__phone">
+                +7 (495) 740-05-28
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg>
+            </a>
+            <a href="tel:8 (800) 333-22-33" class="top__phone hide">
+                8 (800) 333-22-33
+            </a>
+        </div>
+        <a href="javascript:" class="top__call" data-modal="call">Заказать звонок</a>
+    </div>
+</section>
+
 <header class="header">
     <div class="container">
-        <a class="header__logo" href="javascript:"><img src="img/logo.svg" alt=""></a>
+        <a class="header__logo" href="/new-road/build"><img src="img/logo.svg" alt=""></a>
         <div class="header__menu">
-            <div>
+            <div class="active">
                 <span>Услуги <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg></span>
                 <div class="dropdown">
                     <div class="dropdown__wrapper">
-                        <a href="javascript:void(0)">О компании</a>
-                        <a href="javascript:void(0)">Документы</a>
+                        <div>
+                            О компании <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
+                        <div>
+                            Документы <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
                         <a href="javascript:void(0)">Партнёры</a>
                     </div>
                 </div>
@@ -68,20 +122,37 @@
                 <span>О нас <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg></span>
                 <div class="dropdown">
                     <div class="dropdown__wrapper">
-                        <a href="javascript:void(0)">О компании</a>
-                        <a href="javascript:void(0)">Документы</a>
+                        <div>
+                            О компании <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
+                        <div>
+                            Документы <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
                         <a href="javascript:void(0)">Партнёры</a>
                     </div>
                 </div>
             </div>
             <a href="javascript:void(0)">Партнёры</a>
             <a href="javascript:void(0)">Контакты</a>
+            <div class="bar"></div>
         </div>
         <div class="header__search">
             <input type="text" placeholder="Поиск">
             <button><svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-search"></use></svg></button>
         </div>
-        <a href="javascript:" class="btn">Расчёт стоимости</a>
+        <a href="javascript:" class="btn" data-modal="rent">Расчёт стоимости</a>
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -1047,8 +1118,8 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="works__imgs">
-                        <div><img src="img/before.jpg" alt="" /><span>до</span></div>
-                        <div><img src="img/after.jpg" alt="" /><span>после</span></div>
+                        <div data-fancybox="product" data-src="img/before.jpg"><img src="img/before.jpg" alt="" /><span>до</span></div>
+                        <div data-fancybox="product" data-src="img/after.jpg"><img src="img/after.jpg" alt="" /><span>после</span></div>
                     </div>
                     <div class="works__title">Капитальное строительство автомобильной стоянки</div>
                     <div class="work__text">
@@ -1058,8 +1129,8 @@
                 </div>
                 <div class="swiper-slide">
                     <div class="works__imgs">
-                        <div><img src="img/before.jpg" alt="" /><span>до</span></div>
-                        <div><img src="img/after.jpg" alt="" /><span>после</span></div>
+                        <div data-fancybox="product" data-src="img/before.jpg"><img src="img/before.jpg" alt="" /><span>до</span></div>
+                        <div data-fancybox="product" data-src="img/after.jpg"><img src="img/after.jpg" alt="" /><span>после</span></div>
                     </div>
                     <div class="works__title">Капитальное строительство автомобильной стоянки</div>
                     <div class="work__text">
@@ -1128,7 +1199,7 @@
                         </div>
                     </div>
                     <div class="zoom" data-modal="review-full">
-                        <img src="img/review1.jpg" alt="" />
+                        <img src="img/review1.jpg" data-fancybox="video2" data-src="img/review1.jpg" alt="" />
                         <div class="zoom__btn">
                             <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
                         </div>
@@ -1300,7 +1371,7 @@
                     <a href="javascript:" class="link"><span>Смотреть в источнике</span></a>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
+            <div class="swiper-pagination anim"></div>
         </div>
     </div>
 </section>
@@ -1364,12 +1435,1219 @@
     </div>
 </section>
 
+<section class="certs">
+    <div class="container">
+        <h2>Сертификаты и разрешения</h2>
+        <div class="certs__text">
+            Все разрешения и сертификаты можно проверить в публичных реестрах. Компания «NEW ROAD» имеет все разрешения на выполнение работ в сфере
+            асфальтирования дорог.
+        </div>
+        <div class="certs__text">
+            <strong>В том числе:</strong>
+        </div>
+        <ul>
+            <li>СРО до 60 млн. ₽ по одному договору</li>
+            <li>Сертификат соответствия международного стандарта ISO 9001-2015 (Системы менеджмента качества)</li>
+            <li>Сертификат о включении в «Реестр Добросовестных Исполнителей»</li>
+        </ul>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide certs__item">
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert1.jpg"><img src="img/cert1.jpg" alt="" /></div>
+                    <span
+                        >Сертификат <br />
+                        Системы менеджмента <br />
+                        качества ISO 9001-2015</span
+                    >
+                </div>
+                <div class="swiper-slide certs__item">
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert2.jpg"><img src="img/cert2.jpg" alt="" /></div>
+                    <span
+                        >Сертификат <br />
+                        Системы менеджмента <br />
+                        качества ISO 9001-2015</span
+                    >
+                </div>
+                <div class="swiper-slide certs__item">
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert3.jpg"><img src="img/cert3.jpg" alt="" /></div>
+                    <span
+                        >Сертификат <br />
+                        Системы менеджмента <br />
+                        качества ISO 9001-2015</span
+                    >
+                </div>
+                <div class="swiper-slide certs__item">
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert1.jpg"><img src="img/cert1.jpg" alt="" /></div>
+                    <span
+                        >Сертификат <br />
+                        Системы менеджмента <br />
+                        качества ISO 9001-2015</span
+                    >
+                </div>
+                <div class="swiper-slide certs__item">
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert2.jpg"><img src="img/cert2.jpg" alt="" /></div>
+                    <span
+                        >Сертификат <br />
+                        Системы менеджмента <br />
+                        качества ISO 9001-2015</span
+                    >
+                </div>
+                <div class="swiper-slide certs__item">
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert3.jpg"><img src="img/cert3.jpg" alt="" /></div>
+                    <span
+                        >Сертификат <br />
+                        Системы менеджмента <br />
+                        качества ISO 9001-2015</span
+                    >
+                </div>
+            </div>
+            <div class="swiper-pagination anim"></div>
+        </div>
+    </div>
+</section>
+
+<section class="projects gray">
+    <div class="container">
+        <h2>Реализованные проекты</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+        <div class="slider__controls slider__controls-center">
+            <div class="swiper-button-prev">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-left"></use></svg>
+            </div>
+            <div class="swiper-button-next">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-right"></use></svg>
+            </div>
+        </div>
+    </div>
+
+    <section class="adv">
+        <div class="container" style="background-image: url('img/banner2.jpg')">
+            <h2>
+                Ещё больше объектов <br />
+                смотрите в разделе Проекты
+            </h2>
+            <a href="javascript:" class="btn">Перейти в раздел</a>
+        </div>
+    </section>
+</section>
+
+<section class="specialists">
+    <div class="container">
+        <h2>Специалисты NEW ROAD</h2>
+        <div class="subtitle">В нашей команде трудятся высококвалифицированные специалисты и профессионалы своего дела</div>
+
+        <div class="swiper-container padding">
+            <div class="swiper-wrapper">
+                <div class="specialists__item swiper-slide">
+                    <div class="specialists__img"><img src="img/s1.jpg" alt="" /></div>
+                    <div class="specialists__name">
+                        Константин <br />
+                        Константинов
+                    </div>
+                    <div class="specialists__text">главный инженер-технолог</div>
+                    <a href="javascript:" class="link"><span>Подробнее</span></a>
+                </div>
+                <div class="specialists__item swiper-slide">
+                    <div class="specialists__img"><img src="img/s2.jpg" alt="" /></div>
+                    <div class="specialists__name">
+                        Константин <br />
+                        Константинопольский
+                    </div>
+                    <div class="specialists__text">главный инженер-технолог</div>
+                    <a href="javascript:" class="link"><span>Подробнее</span></a>
+                </div>
+                <div class="specialists__item swiper-slide">
+                    <div class="specialists__img"><img src="img/s3.jpg" alt="" /></div>
+                    <div class="specialists__name">
+                        Марина <br />
+                        Иванова
+                    </div>
+                    <div class="specialists__text">главный инженер-технолог</div>
+                    <a href="javascript:" class="link"><span>Подробнее</span></a>
+                </div>
+                <div class="specialists__item swiper-slide">
+                    <div class="specialists__img"><img src="img/s1.jpg" alt="" /></div>
+                    <div class="specialists__name">
+                        Константин <br />
+                        Константинов
+                    </div>
+                    <div class="specialists__text">главный инженер-технолог</div>
+                    <a href="javascript:" class="link"><span>Подробнее</span></a>
+                </div>
+                <div class="specialists__item swiper-slide">
+                    <div class="specialists__img"><img src="img/s2.jpg" alt="" /></div>
+                    <div class="specialists__name">
+                        Константин <br />
+                        Константинопольский
+                    </div>
+                    <div class="specialists__text">главный инженер-технолог</div>
+                    <a href="javascript:" class="link"><span>Подробнее</span></a>
+                </div>
+                <div class="specialists__item swiper-slide">
+                    <div class="specialists__img"><img src="img/s3.jpg" alt="" /></div>
+                    <div class="specialists__name">
+                        Марина <br />
+                        Иванова
+                    </div>
+                    <div class="specialists__text">главный инженер-технолог</div>
+                    <a href="javascript:" class="link"><span>Подробнее</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="slider__controls slider__controls-center">
+            <div class="swiper-button-prev">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-left"></use></svg>
+            </div>
+            <div class="swiper-button-next">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-right"></use></svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="auto black">
+    <div class="container">
+        <h2>Парк дорожно-строительной техники NEW ROAD</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide auto__item">
+                    <div class="auto__card" style="background-image: url('img/p1.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+                <div class="swiper-slide auto__item">
+                    <div class="auto__card" style="background: url('img/p1.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+                <div class="swiper-slide auto__item auto__item">
+                    <div class="auto__card auto__card-full">
+                        <div class="auto__num">
+                            <img src="img/31.svg" alt="" /> единица <br />
+                            дорожно-строительной<br />
+                            техники в парке
+                        </div>
+                        <div class="auto__num">
+                            <img src="img/14.svg" alt="" /> специалистов<br />
+                            обслуживают парк<br />
+                            техники
+                        </div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p1.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+                <div class="swiper-slide auto__item">
+                    <div class="auto__card" style="background: url('img/p1.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+                <div class="swiper-slide auto__item">
+                    <div class="auto__card" style="background: url('img/p1.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+                <div class="swiper-slide auto__item auto__item">
+                    <div class="auto__card auto__card-full">
+                        <div class="auto__num">
+                            <img src="img/31.svg" alt="" /> единица <br />
+                            дорожно-строительной<br />
+                            техники в парке
+                        </div>
+                        <div class="auto__num">
+                            <img src="img/14.svg" alt="" /> специалистов<br />
+                            обслуживают парк<br />
+                            техники
+                        </div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p1.jpg')">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="slider__controls slider__controls-center">
+            <div class="swiper-button-prev yellow">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-left"></use></svg>
+            </div>
+            <div class="swiper-button-next yellow">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-right"></use></svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="map">
+    <div class="container">
+        <div>
+            <h2>
+                Работаем в Москве <br />
+                и Московской области
+            </h2>
+        </div>
+        <div class="map__list">
+            <div class="col">
+                <a href="javascript:">Апрелевка</a>
+                <a href="javascript:">Балашиха</a>
+                <a href="javascript:">Бронницы</a>
+                <a href="javascript:">Верея</a>
+                <a href="javascript:">Видное</a>
+                <a href="javascript:">Волоколамск</a>
+                <a href="javascript:">Воскресенск</a>
+                <a href="javascript:">Высоковск</a>
+                <a href="javascript:">Голицыно</a>
+                <a href="javascript:">Дедовск</a>
+                <a href="javascript:">Дзержинский</a>
+                <a href="javascript:">Дмитров</a>
+                <a href="javascript:">Долгопрудный</a>
+                <a href="javascript:">Домодедово</a>
+                <a href="javascript:">Дрезна</a>
+                <a href="javascript:">Дубна</a>
+                <a href="javascript:">Егорьевск</a>
+                <a href="javascript:">Жуковский</a>
+                <a href="javascript:">Зарайск </a>
+                <a href="javascript:">Звенигород</a>
+                <a href="javascript:">Ивантеевка</a>
+                <a href="javascript:">Истра</a>
+                <a href="javascript:">Кашира</a>
+                <a href="javascript:">Клин</a>
+            </div>
+            <div class="col">
+                <a href="javascript:">Коломна</a>
+                <a href="javascript:">Королёв</a>
+                <a href="javascript:">Котельники</a>
+                <a href="javascript:">Красноармейск</a>
+                <a href="javascript:">Красногорск</a>
+                <a href="javascript:">Краснозаводск</a>
+                <a href="javascript:">Краснознаменск</a>
+                <a href="javascript:">Кубинка</a>
+                <a href="javascript:">Куровское</a>
+                <a href="javascript:">Ликино-Дулёво</a>
+                <a href="javascript:">Лобня</a>
+                <a href="javascript:">Лосино-Петровский</a>
+                <a href="javascript:">Луховицы</a>
+                <a href="javascript:">Лыткарино</a>
+                <a href="javascript:">Люберцы</a>
+                <a href="javascript:">Можайск</a>
+                <a href="javascript:">Москва</a>
+                <a href="javascript:">Мытищи</a>
+                <a href="javascript:">Наро-Фоминск</a>
+                <a href="javascript:">Ногинск</a>
+                <a href="javascript:">Одинцово</a>
+                <a href="javascript:">Озёры</a>
+                <a href="javascript:">Орехово-Зуево</a>
+                <a href="javascript:">Павловский Посад </a>
+                <a href="javascript:">Пересвет</a>
+            </div>
+            <div class="col">
+                <a href="javascript:">Подольск</a>
+                <a href="javascript:">Протвино</a>
+                <a href="javascript:">Пушкино</a>
+                <a href="javascript:">Пущино</a>
+                <a href="javascript:">Раменское</a>
+                <a href="javascript:">Реутов</a>
+                <a href="javascript:">Рошаль</a>
+                <a href="javascript:">Руза</a>
+                <a href="javascript:">Сергиев Посад</a>
+                <a href="javascript:">Серпухов</a>
+                <a href="javascript:">Солнечногорск</a>
+                <a href="javascript:">Старая Купавна</a>
+                <a href="javascript:">Ступино</a>
+                <a href="javascript:">Талдом</a>
+                <a href="javascript:">Фрязино</a>
+                <a href="javascript:">Химки</a>
+                <a href="javascript:">Хотьково</a>
+                <a href="javascript:">Черноголовка</a>
+                <a href="javascript:">Чехов</a>
+                <a href="javascript:">Шатура</a>
+                <a href="javascript:">Щёлково</a>
+                <a href="javascript:">Электрогорск</a>
+                <a href="javascript:">Электросталь</a>
+                <a href="javascript:">Электроугли</a>
+                <a href="javascript:">Яхрома</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="consultation">
+    <div class="container">
+        <h2>
+            Консультация, выезд специалиста на объект <br />
+            и составление сметы <span>БЕСПЛАТНО</span>
+        </h2>
+        <div class="consultation__text">Отправьте заявку и мы свяжется с вами в ближайшее время</div>
+        <a href="javascript:" class="btn btn-black">Отправить заявку</a>
+
+        <div class="consultation__phone">
+            <span>или позвоните нам:</span>
+            <a href="tel:+74957400528">+7 (495) 740-05-28</a>
+            <a href="tel:88003332233">8 (800) 333-22-33</a>
+        </div>
+
+        <img src="img/phone.png" alt="" />
+    </div>
+</section>
+
+<section class="questions">
+    <div class="container">
+        <h2>Часто задаваемые вопросы</h2>
+
+        <div class="question">Сколько стоит выезд специалиста на объект и составление сметы?</div>
+        <div class="answer">
+            Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
+            современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
+
+            Наши работы соответствую всем ГОСТам. Узнать цены на асфальтирование дорог и дворовых территорий в Москве Вы можете на сайте или позвонив нашим
+            менеджерам. Выезд специалиста и консультация по составлению сметы в Москве и Московской области бесплатно. При заказе асфальтных работ через наш
+            сайт Вы получаете 10% скидку.
+        </div>
+
+        <div class="question active">Какую смесь вы используете для укладки асфальта?</div>
+        <div class="answer active">
+            Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
+            современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
+
+            Наши работы соответствую всем ГОСТам. Узнать цены на асфальтирование дорог и дворовых территорий в Москве Вы можете на сайте или позвонив нашим
+            менеджерам. Выезд специалиста и консультация по составлению сметы в Москве и Московской области бесплатно. При заказе асфальтных работ через наш
+            сайт Вы получаете 10% скидку.
+        </div>
+
+        <div class="question">Сколько стоит выезд специалиста на объект и составление сметы?</div>
+        <div class="answer">
+            Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
+            современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
+
+            Наши работы соответствую всем ГОСТам. Узнать цены на асфальтирование дорог и дворовых территорий в Москве Вы можете на сайте или позвонив нашим
+            менеджерам. Выезд специалиста и консультация по составлению сметы в Москве и Московской области бесплатно. При заказе асфальтных работ через наш
+            сайт Вы получаете 10% скидку.
+        </div>
+
+        <div class="question">Сколько стоит выезд специалиста на объект и составление сметы?</div>
+        <div class="answer">
+            Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
+            современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
+
+            Наши работы соответствую всем ГОСТам. Узнать цены на асфальтирование дорог и дворовых территорий в Москве Вы можете на сайте или позвонив нашим
+            менеджерам. Выезд специалиста и консультация по составлению сметы в Москве и Московской области бесплатно. При заказе асфальтных работ через наш
+            сайт Вы получаете 10% скидку.
+        </div>
+
+        <div class="question">Сколько стоит выезд специалиста на объект и составление сметы?</div>
+        <div class="answer">
+            Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
+            современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
+
+            Наши работы соответствую всем ГОСТам. Узнать цены на асфальтирование дорог и дворовых территорий в Москве Вы можете на сайте или позвонив нашим
+            менеджерам. Выезд специалиста и консультация по составлению сметы в Москве и Московской области бесплатно. При заказе асфальтных работ через наш
+            сайт Вы получаете 10% скидку.
+        </div>
+
+        <div class="question">Сколько стоит выезд специалиста на объект и составление сметы?</div>
+        <div class="answer">
+            Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
+            современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
+
+            Наши работы соответствую всем ГОСТам. Узнать цены на асфальтирование дорог и дворовых территорий в Москве Вы можете на сайте или позвонив нашим
+            менеджерам. Выезд специалиста и консультация по составлению сметы в Москве и Московской области бесплатно. При заказе асфальтных работ через наш
+            сайт Вы получаете 10% скидку.
+        </div>
+    </div>
+</section>
+
+<section class="blog">
+    <div class="container">
+        <h2>Блог компании</h2>
+
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide blog__item-full">
+                    <a href="javascript:" class="blog__item" style="background-image: url(img/b1.jpg)">
+                        <div class="blog__date">22.12.2023</div>
+                        <div class="blog__title">7 правил правильной дороги, которая прослужит долгие годы</div>
+                        <div class="blog__text">Разбор всех техник, мнение экспертов в области дорожного строительства</div>
+                        <div class="btn btn-outline">Читать статью</div>
+                        <div class="blog__tags">
+                            <span>дорожная техника</span>
+                            <span>ремонт дорог </span>
+                            <span>спецтехника</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:" class="blog__item" style="background-image: url(img/b2.jpg)">
+                        <div class="blog__date">22.12.2023</div>
+                        <div class="blog__title">7 правил правильной дороги, которая прослужит долгие годы</div>
+                        <div class="blog__text">Разбор всех техник, мнение экспертов в области дорожного строительства</div>
+                        <div class="btn btn-black btn-outline">Читать статью</div>
+                        <div class="blog__tags">
+                            <span>дорожная техника</span>
+                            <span>ремонт дорог </span>
+                            <span>спецтехника</span>
+                        </div>
+                    </a>
+                    <a href="javascript:" class="blog__item blog__item-angle">
+                        <div class="blog__name">Больше статей читайте в нашем блоге</div>
+                        <div class="btn btn-black btn-outline">Перейти в раздел</div>
+                        <img src="img/b3.svg" alt="" class="blog__img" />
+                    </a>
+                </div>
+                <div class="swiper-slide blog__item-full">
+                    <a href="javascript:" class="blog__item" style="background-image: url(img/b1.jpg)">
+                        <div class="blog__date">22.12.2023</div>
+                        <div class="blog__title">7 правил правильной дороги, которая прослужит долгие годы</div>
+                        <div class="blog__text">Разбор всех техник, мнение экспертов в области дорожного строительства</div>
+                        <div class="btn btn-outline">Читать статью</div>
+                        <div class="blog__tags">
+                            <span>дорожная техника</span>
+                            <span>ремонт дорог </span>
+                            <span>спецтехника</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="javascript:" class="blog__item" style="background-image: url(img/b2.jpg)">
+                        <div class="blog__date">22.12.2023</div>
+                        <div class="blog__title">7 правил правильной дороги, которая прослужит долгие годы</div>
+                        <div class="blog__text">Разбор всех техник, мнение экспертов в области дорожного строительства</div>
+                        <div class="btn btn-black btn-outline">Читать статью</div>
+                        <div class="blog__tags">
+                            <span>дорожная техника</span>
+                            <span>ремонт дорог </span>
+                            <span>спецтехника</span>
+                        </div>
+                    </a>
+                    <a href="javascript:" class="blog__item blog__item-angle">
+                        <div class="blog__name">Больше статей читайте в нашем блоге</div>
+                        <div class="btn btn-black btn-outline">Перейти в раздел</div>
+                        <img src="img/b3.svg" alt="" class="blog__img" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="slider__controls slider__controls-center">
+            <div class="swiper-button-prev">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-left"></use></svg>
+            </div>
+            <div class="swiper-button-next">
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-right"></use></svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contacts">
+    <div id="map"></div>
+
+    <div class="container">
+        <div class="contacts__wrapper">
+            <div class="contacts__block">
+                <h2>Контакты</h2>
+                <div class="contacts__items">
+                    <div>
+                        <a href="tel:+7 (495) 740-05-28">+7 (495) 740-05-28</a>
+                        <a href="tel:8 (800) 333-22-33">8 (800) 333-22-33</a>
+                    </div>
+                    <a href="javascript:" class="btn">Заказать звонок</a>
+                </div>
+                <div class="contacts__item">
+                    <span>напишите нам на e-mail:</span>
+                    <a href="mailto:info@newroad.ru">info@newroad.ru</a>
+                </div>
+                <div class="contacts__item">
+                    <span>или в мессенджеры:</span>
+                    <div class="social">
+                        <a href="javascript:">
+                            <img src="img/icons/whatsapp.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/telegram.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/viber.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="contacts__item line">
+                    <span>тех.база №1: </span>
+                    Химки, квартал Ивакино
+                </div>
+                <div class="contacts__item line">
+                    <span>тех.база №1: </span>
+                    Химки, квартал Ивакино
+                </div>
+
+                <div class="social">
+                    <a href="javascript:">
+                        <img src="img/icons/vk.svg" alt="" />
+                    </a>
+                    <a href="javascript:">
+                        <img src="img/icons/ok.svg" alt="" />
+                    </a>
+                    <a href="javascript:">
+                        <img src="img/icons/youtube.svg" alt="" />
+                    </a>
+                    <a href="javascript:">
+                        <img src="img/icons/twitter.svg" alt="" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="text">
+    <div class="container">
+        <h2>Подробнее о дорожно-строительных работах</h2>
+
+        <p>
+            Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай, традиционно синхронизирует
+            интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует комплексный
+            <a href="javascript:" class="link"><span>интеграл от функции</span></a>
+            комплексной переменной.
+        </p>
+
+        <p>
+            Интеграл от функции, обращающейся в бесконечность в изолированной точке основан на тщательном анализе. Наибольшее и наименьшее значения функции
+            переворачивает абстрактный экстремум функции. Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая
+            очевидный случай, традиционно синхронизирует интеграл от функции, обращающейся в бесконечность вдоль линии.
+        </p>
+
+        <blockquote>
+            <div>
+                Начало координат, конечно, допускает абстрактный интеграл от функции комплексной переменной, выще слоя несомненно приведет нас к истине. Начало
+                координат, конечно, допускает абстрактный перископ следа.
+            </div>
+            <span>Ивановский Иван, менеджер компании «NEW ROAD»</span>
+        </blockquote>
+
+        <h2>Дорожный ресурс и работы</h2>
+
+        <img src="img/content.jpg" alt="" class="left" />
+        <p>
+            Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай, традиционно след синхронизирует
+            интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует их комплексный интеграл от переменной.
+            Интеграл от функции, обращают в бесконечность в изолированной точке основан на тщательном анализе. Наибольшее и наименьшее значения функции
+            переворачивает абстракт экстремум функции. Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая
+            очевидный случай, традиционно синхронизирует интеграл.
+        </p>
+
+        <p>
+            Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай, традиционно след синхронизирует
+            интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует их комплексный интеграл от переменной
+            слоя пути перископа акта. <br />Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай,
+            традиционно синхронизирует интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует комплексный
+            интеграл.
+        </p>
+
+        <h2>О парке спецтехники в компании</h2>
+
+        <div class="text__cols">
+            <div>
+                Интеграл по ориентированной области реально интеграл. Целое число, исключая очевидный случай, синхронизирует интеграл от функции, обращающейся
+                комплексный интеграл от переменной. Интеграл в бесконечность в изолированной точке основан след Наибольшее и наименьшее значения функции перевор
+                экстремум функции. Интеграл по ориентированной создает криволинейный интеграл. Целое число, случай, традиционно синхронизирует интеграл.
+            </div>
+            <div>
+                Интеграл по ориентированной области реально интеграл. Целое число, исключая очевидный случай, синхронизирует интеграл от функции, обращающейся
+                комплексный интеграл от переменной. Интеграл в бесконечность в изолированной точке основан след Наибольшее и наименьшее значения функции перевор
+                экстремум функции. Интеграл по ориентированной создает криволинейный интеграл. Целое число, случай, традиционно синхронизирует интеграл.
+            </div>
+        </div>
+
+        <div class="text__cols lines">
+            <div>
+                Интеграл по ориентированной области реально интеграл. Целое число, исключая очевидный случай, синхронизирует интеграл от функции, обращающейся
+                комплексный интеграл от переменной. Интеграл в бесконечность в изолированной точке основан след Наибольшее и наименьшее значения функции перевор
+                экстремум функции. Интеграл по ориентированной создает криволинейный интеграл. Целое число, случай, традиционно синхронизирует интеграл.
+            </div>
+            <div>
+                Интеграл по ориентированной области реально интеграл. Целое число, исключая очевидный случай, синхронизирует интеграл от функции, обращающейся
+                комплексный интеграл от переменной. Интеграл в бесконечность в изолированной точке основан след Наибольшее и наименьшее значения функции перевор
+                экстремум функции. Интеграл по ориентированной создает криволинейный интеграл. Целое число, случай, традиционно синхронизирует интеграл.
+            </div>
+        </div>
+
+        <div class="text__border">
+            <div>
+                <h2>Дорожно-строительная техника</h2>
+                <p>
+                    Интеграл по&nbsp;ориентированной области реально создает интеграл. Целое число, исключая очевидный случай, традиции синхронизирует интеграл
+                    от функции, обращающейся в&nbsp;без комплексный интеграл от&nbsp;переменной. Интеграл от&nbsp;функции, в&nbsp;бесконечность
+                    в&nbsp;изолированной точке основан на тщатель Наибольшее и&nbsp;наименьшее значения функции переворачивает экстремум функции. Интеграл
+                    по&nbsp;ориентированной области создает криволинейный интеграл.
+                </p>
+            </div>
+            <div>
+                <img src="img/content2.png" alt="" />
+                <span>дорожные работы</span>
+            </div>
+        </div>
+
+        <div class="text__steps">
+            <h2>Шаги работы</h2>
+
+            <div class="text__steps-item">
+                <div class="text__steps-num">1</div>
+                <div class="text__steps-info">
+                    <div class="text__steps-title">Оставить заявку на сайте</div>
+                    <div class="text__steps-text">
+                        Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая традиционно синхронизирует интеграл от
+                        функции, обращающейся в бесконечность вдоль линии. Абсолютная решительно транслирует комплексный интеграл.
+                    </div>
+                </div>
+            </div>
+            <div class="text__steps-item">
+                <div class="text__steps-num">2</div>
+                <div class="text__steps-info">
+                    <div class="text__steps-title">Оставить заявку на сайте</div>
+                    <div class="text__steps-text">Интеграл по ориентированной области реально создает криволинейный интеграл.</div>
+                </div>
+            </div>
+            <div class="text__steps-item">
+                <div class="text__steps-num">3</div>
+                <div class="text__steps-info">
+                    <div class="text__steps-title">Оставить заявку на сайте</div>
+                    <div class="text__steps-text">Интеграл по ориентированной области реально создает криволинейный интеграл.</div>
+                </div>
+            </div>
+            <div class="text__steps-item">
+                <div class="text__steps-num">4</div>
+                <div class="text__steps-info">
+                    <div class="text__steps-title">Оставить заявку на сайте</div>
+                    <div class="text__steps-text">Интеграл по ориентированной области реально создает криволинейный интеграл.</div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Услуги компании</h2>
+
+        <div class="tabs">
+            <div data-tab="t1" class="active">Асфальтирование дорог</div>
+            <div data-tab="t2">Ремонт дорог</div>
+            <div data-tab="t3">Ямочный ремонт</div>
+        </div>
+
+        <div class="tab" data-tab="t1">
+            <p>
+                Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай, традиционно синхронизирует
+                интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует комплексный интеграл от функции
+                комплексной переменной.
+            </p>
+
+            <p>
+                Интеграл от функции, обращающейся в бесконечность в изолированной точке основан на тщательном анализе. Наибольшее и наименьшее значения функции
+                переворачивает абстрактный экстремум функции. Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая
+                очевидный случай, традиционно синхронизирует интеграл от функции, обращающейся в бесконечность вдоль линии.
+            </p>
+
+            <h3>Список 1</h3>
+            <ol>
+                <li>Асфальтирование дорог</li>
+                <li>Ремонт дорог</li>
+                <li>Ямочный ремонт</li>
+                <li>Укладка асфальтной крошки</li>
+                <li>Дорожная разметка</li>
+            </ol>
+            <h3>Список 2</h3>
+            <ul class="line">
+                <li>Асфальтирование дорог</li>
+                <li>Ремонт дорог</li>
+                <li>Ямочный ремонт</li>
+                <li>Укладка асфальтной крошки</li>
+                <li>Дорожная разметка</li>
+            </ul>
+        </div>
+        <div class="tab active" data-tab="t2">
+            <p>
+                Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай, традиционно синхронизирует
+                интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует комплексный интеграл от функции
+                комплексной переменной.
+            </p>
+
+            <p>
+                Интеграл от функции, обращающейся в бесконечность в изолированной точке основан на тщательном анализе. Наибольшее и наименьшее значения функции
+                переворачивает абстрактный экстремум функции. Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая
+                очевидный случай, традиционно синхронизирует интеграл от функции, обращающейся в бесконечность вдоль линии.
+            </p>
+
+            <h3>Список 1</h3>
+            <ol>
+                <li>Асфальтирование дорог</li>
+                <li>Ремонт дорог</li>
+                <li>Ямочный ремонт</li>
+                <li>Укладка асфальтной крошки</li>
+                <li>Дорожная разметка</li>
+            </ol>
+            <h3>Список 2</h3>
+            <ul class="line">
+                <li>Асфальтирование дорог</li>
+                <li>Ремонт дорог</li>
+                <li>Ямочный ремонт</li>
+                <li>Укладка асфальтной крошки</li>
+                <li>Дорожная разметка</li>
+            </ul>
+        </div>
+        <div class="tab" data-tab="t3">
+            <p>
+                Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая очевидный случай, традиционно синхронизирует
+                интеграл от функции, обращающейся в бесконечность вдоль линии. Абсолютная погрешность решительно транслирует комплексный интеграл от функции
+                комплексной переменной.
+            </p>
+
+            <p>
+                Интеграл от функции, обращающейся в бесконечность в изолированной точке основан на тщательном анализе. Наибольшее и наименьшее значения функции
+                переворачивает абстрактный экстремум функции. Интеграл по ориентированной области реально создает криволинейный интеграл. Целое число, исключая
+                очевидный случай, традиционно синхронизирует интеграл от функции, обращающейся в бесконечность вдоль линии.
+            </p>
+
+            <h3>Список 1</h3>
+            <ol>
+                <li>Асфальтирование дорог</li>
+                <li>Ремонт дорог</li>
+                <li>Ямочный ремонт</li>
+                <li>Укладка асфальтной крошки</li>
+                <li>Дорожная разметка</li>
+            </ol>
+            <h3>Список 2</h3>
+            <ul class="line">
+                <li>Асфальтирование дорог</li>
+                <li>Ремонт дорог</li>
+                <li>Ямочный ремонт</li>
+                <li>Укладка асфальтной крошки</li>
+                <li>Дорожная разметка</li>
+            </ul>
+        </div>
+
+        <div class="timer full">
+            до конца спецпредложения осталось:
+            <div class="timer__wrapper">
+                <div>
+                    <span class="days">00</span>
+                    дни
+                </div>
+                <span class="dots">:</span>
+                <div>
+                    <span class="hours">00</span>
+                    часы
+                </div>
+                <span class="dots">:</span>
+                <div>
+                    <span class="minutes">00</span>
+                    минуты
+                </div>
+                <span class="dots">:</span>
+                <div>
+                    <span class="seconds">00</span>
+                    секунды
+                </div>
+            </div>
+        </div>
+
+        <div class="text__footer">
+            <div class="text__footer-author">
+                <div class="text__footer-author-img">
+                    <img src="img/person2.png" alt="" />
+                </div>
+                <div class="text__footer-author-info">
+                    <span>страница проверена специалистом:</span>
+                    <div>Константин Константинопольский</div>
+                </div>
+            </div>
+            <div class="text__footer-date">
+                <span>опубликовано: 22.01.2023</span>
+                <span>изменено: 22.01.2023</span>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- END CONTENT  -->
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__row">
+            <div class="footer__col footer__logo">
+                <img src="img/footer-logo.svg" alt="">
+            </div>
+            <div class="footer__menu">
+                <div class="footer__col">
+                    <div class="footer__title">NEW ROAD</div>
+                    <a href="javascript:">О компании</a>
+                    <a href="javascript:">Сертификаты</a>
+                    <a href="javascript:">Отзывы и благодарности</a>
+                    <a href="javascript:">Блог</a>
+                    <a href="javascript:">Контакты</a>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__title">КЛИЕНТАМ</div>
+                    <a href="javascript:">Услуги</a>
+                    <a href="javascript:">Прайс-лист</a>
+                    <a href="javascript:">Калькулятор</a>
+                    <a href="javascript:">Наши работы</a>
+                    <a href="javascript:">Вопросы и ответы</a>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__title">УСЛУГИ</div>
+                    <a href="javascript:">Асфальтирование</a>
+                    <a href="javascript:">Ремонт дорог</a>
+                    <a href="javascript:">Благоустройство</a>
+                    <a href="javascript:">Земляные работы</a>
+                    <a href="javascript:">Уборка и вывоз снега</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <a href="javascript:" class="btn" data-modal="message">Рассчитать стоимость</a>
+                <div class="footer__phones">
+                    <a href="tel:+7 (495) 740-05-28">+7 (495) 740-05-28</a>
+                    <a href="tel:8 (800) 333-22-33">8 (800) 333-22-33</a>
+                </div>
+                <a href="mailto:info@newroad.ru" class="footer__mail">
+                    <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-letter"></use></svg>
+                    info@newroad.ru
+                </a>
+                <div class="footer__social">
+                    <span>напишите нам в мессенджеры:</span>
+                    <div class="social">
+                        <a href="javascript:">
+                            <img src="img/icons/whatsapp.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/telegram.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/viber.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__addr">
+                    <div>
+                        <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-point"></use></svg>
+                        Москва, ш. Дмитровское, д. 107, к. 2
+                    </div>
+                    <div>
+                        <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-time"></use></svg>
+                        Ежедневно с 8:00 до 21:00
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <span>мы в соцсетях:</span>
+                    <div class="social">
+                        <a href="javascript:">
+                            <img src="img/icons/vk.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/ok.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/youtube.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/twitter.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row">
+            <div class="footer__copy">
+                <div>&laquo;NEW ROAD&raquo; &copy;&nbsp;Все права защищены.&nbsp;2023
+                    <div class="list">
+                        <a href="javascript:">Политика конфиденциальности</a>
+                        <div class="flex">
+                            <a href="javascript:">Пользовательское соглашение</a>
+                            <a href="javascript:">Карта сайта</a>
+                        </div>
+                    </div>
+                </div>
+                <div>Вся информация, размещенная на&nbsp;данном сайте, ни&nbsp;при каких <br />  
+обстоятельствах не&nbsp;может считаться публичной офертой <br />   в&nbsp;соответствии со&nbsp;ст.&nbsp;437.2 Гражданского кодекса&nbsp;РФ.</div>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+<div class="scrolltop">
+    <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-scrolltop"></use></svg>
+</div>
+
+<div class="backdrop">
+    <div class="modal" data-modal="call">
+        <img src="img/lines-gray.svg" class="ornament" alt="">
+        <div class="modal__content">
+        <div class="modal__close">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="modal__header">Заказать звонок</div>
+        <div class="modal__subtitle">Оставьте заявку и мы свяжемся с вами в ближайшее время</div>
+
+        <form>
+            <div class="form-group">
+                <input type="text" class="gray" placeholder="Имя*">
+                <input type="text" class="gray" placeholder="Телефон*" class="phone-mask">
+            </div>
+            <div class="checkbox gray">
+                <input type="checkbox"  id="checkbox1">
+                <label for="checkbox1">Я даю свое согласие на обработку персональных данных <br>
+                    и соглашаюсь с условиями и <a href="javascript:">политикой конфиденциальности</a></label>
+            </div>
+            <button class="btn btn-black center" data-modal="thanks">Отправить заявку</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="region">
+        <img src="img/lines-gray.svg" class="ornament" alt="">
+        <div class="modal__content">
+            <div class="modal__close">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal__header">Выбор региона</div>
+        <div class="modal__subtitle">Работаем по всему Московскому региону</div>
+            <form>
+                <div class="search">
+                    <input type="text" class="gray" placeholder="Ваш город">
+                    <button><svg><use xlink:href="img/symbol-defs.svg#icon-search"></use></svg></button>
+                </div>
+                <div class="cities">
+                    <div class="cities__col">
+                        <div class="cities__item">
+                            <div class="cities__letter">А</div>
+                            <a href="javascript:">Апрелевка</a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Г</div>
+                            <a href="javascript:">Голубец</a>
+                            <a href="javascript:">Гродно</a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Ж</div>
+                            <a href="javascript:">Жадов </a>
+                            <a href="javascript:">Жаринов</a>
+                            <a href="javascript:">Жатов</a>
+                            <a href="javascript:">Жин</a>
+                            <a href="javascript:">Жадов </a>
+                            <a href="javascript:">Жаринов</a>
+                            <a href="javascript:">Жатов</a>
+                            <a href="javascript:">Жин</a>
+                        </div>
+                    </div>
+                    <div class="cities__col">
+                        <div class="cities__item">
+                            <div class="cities__letter">Б</div>
+                            <a href="javascript:">Балашиха</a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Д</div>
+                            <a href="javascript:">Дедовск </a>
+                            <a href="javascript:">Дзержинский</a>
+                            <a href="javascript:">Дмитров </a>
+                            <a href="javascript:">Долгопрудный</a>
+                            <a href="javascript:">Домодедово </a>
+                            <a href="javascript:">Дрезна</a>
+                            <a href="javascript:">Дубна  </a>
+                            <a href="javascript:">Дедовск </a>
+                            <a href="javascript:">Дзержинский</a>
+                            <a href="javascript:">Дмитров </a>
+                            <a href="javascript:">Долгопрудный</a>
+                            <a href="javascript:">Домодедово </a>
+                            <a href="javascript:">Дрезна</a>
+                            <a href="javascript:">Дубна  </a>
+                        </div>
+                    </div>
+                    <div class="cities__col">
+                        <div class="cities__item">
+                            <div class="cities__letter">В</div>
+                            <a href="javascript:">Верея </a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Е</div>
+                            <a href="javascript:">Евпатория</a>
+                            <a href="javascript:">Ейск</a>
+                            <a href="javascript:">Еманжелинск</a>
+                            <a href="javascript:">Елово</a>
+                            <a href="javascript:">Елово-2</a>
+                            <a href="javascript:">Елово-3</a>
+                            <a href="javascript:">Еловый</a>
+                            <a href="javascript:">Евпатория</a>
+                            <a href="javascript:">Ейск</a>
+                            <a href="javascript:">Еманжелинск</a>
+                            <a href="javascript:">Елово</a>
+                            <a href="javascript:">Елово-2</a>
+                            <a href="javascript:">Елово-3</a>
+                            <a href="javascript:">Еловый</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="rent">
+        <img src="img/ornament.svg" class="ornament" alt="">
+        <div class="modal__content">
+        <div class="modal__close">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="modal__header" data-modal="call">Отправить сообщение</div>
+        <div class="modal__subtitle">Оставьте сообщениеи мы свяжемся с вами в ближайшее время</div>
+
+        <form>
+            <div class="form-group">
+                <div class="datepicker">
+                    <div class="datepicker__main">
+                        <span>Дата начала аренды</span>
+                    </div>
+                    <input type="text" id="dateFrom" placeholder="Выбрать дату" class="datepicker__input">
+                </div>
+                <div>
+                    <div>
+                        <input type="text" class="gray" placeholder="Количество смен">
+                        <input type="text" class="gray" placeholder="Имя*">
+                        <input type="text" class="gray" placeholder="Телефон*" class="phone-mask">
+                        <input type="text" class="gray" placeholder="E-mail*">
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="Текст сообщения" class="gray"></textarea>
+            <div class="checkbox gray">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">Я даю свое согласие на обработку персональных данных <br>
+                    и соглашаюсь с условиями и <a href="javascript:">политикой конфиденциальности</a></label>
+            </div>
+            <button class="btn btn-black center" data-modal="thanks">Отправить сообщение</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="message">
+        <img src="img/ornament.svg" class="ornament" alt="">
+        <div class="modal__content">
+        <div class="modal__close">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="modal__header" data-modal="call">Отправить сообщение</div>
+        <div class="modal__subtitle">Оставьте сообщениеи мы свяжемся с вами в ближайшее время</div>
+
+        <form>
+            <div class="form-group">
+                <div>
+                    <input type="text" class="gray" placeholder="Имя*">
+                    <input type="text" class="gray" placeholder="Телефон*" class="phone-mask">
+                    <input type="text" class="gray" placeholder="E-mail*">
+                </div>
+                <div>
+                    <textarea placeholder="Текст сообщения" class="gray"></textarea>
+                </div>
+            </div>
+            <div class="checkbox gray">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">Я даю свое согласие на обработку персональных данных <br>
+                    и соглашаюсь с условиями и <a href="javascript:">политикой конфиденциальности</a></label>
+            </div>
+            <button class="btn btn-black center" data-modal="thanks">Отправить сообщение</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="thanks">
+        <img src="img/lines-white.svg" class="ornament" alt="">
+        <div class="modal__content">
+            <div class="modal__close">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="modal__header" data-modal="call">Спасибо!</div>
+            <div class="modal__text">Ваше сообщение отправлено. <br>
+                Мы свяжемся с вами в ближайшее время</div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU&amp;apikey=7c1a3237-498c-4eda-967d-e61fb6cd7442" type="text/javascript"></script>
+<script src="js/jquery.daterangepicker.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 

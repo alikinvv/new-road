@@ -12,6 +12,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="css/daterangepicker.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -46,16 +48,68 @@
     </div>
 </section>
 
+<section class="top">
+    <div class="container">
+        <div class="top__city" data-modal="region">
+            Москва <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg>
+        </div>
+        <div class="top__addr">
+            <div>Москва, ш. Дмитровское, д. 107, к. 2</div>
+            <div>ежедневно с 8:00 до 21:00</div>
+        </div>
+        <div class="top__social">
+            <div class="social">
+                <a href="javascript:">
+                    <img src="img/icons/whatsapp.svg" alt="" />
+                </a>
+                <a href="javascript:">
+                    <img src="img/icons/telegram.svg" alt="" />
+                </a>
+                <a href="javascript:">
+                    <img src="img/icons/viber.svg" alt="" />
+                </a>
+            </div>
+            <a href="mailto:info@newroad.ru">info@newroad.ru</a>    
+        </div>
+        <div class="top__phones">
+            <a href="tel:+7 (495) 740-05-28" class="top__phone">
+                +7 (495) 740-05-28
+                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg>
+            </a>
+            <a href="tel:8 (800) 333-22-33" class="top__phone hide">
+                8 (800) 333-22-33
+            </a>
+        </div>
+        <a href="javascript:" class="top__call" data-modal="call">Заказать звонок</a>
+    </div>
+</section>
+
 <header class="header">
     <div class="container">
-        <a class="header__logo" href="javascript:"><img src="img/logo.svg" alt=""></a>
+        <a class="header__logo" href="/new-road/build"><img src="img/logo.svg" alt=""></a>
         <div class="header__menu">
-            <div>
+            <div class="active">
                 <span>Услуги <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg></span>
                 <div class="dropdown">
                     <div class="dropdown__wrapper">
-                        <a href="javascript:void(0)">О компании</a>
-                        <a href="javascript:void(0)">Документы</a>
+                        <div>
+                            О компании <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
+                        <div>
+                            Документы <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
                         <a href="javascript:void(0)">Партнёры</a>
                     </div>
                 </div>
@@ -68,20 +122,37 @@
                 <span>О нас <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg></span>
                 <div class="dropdown">
                     <div class="dropdown__wrapper">
-                        <a href="javascript:void(0)">О компании</a>
-                        <a href="javascript:void(0)">Документы</a>
+                        <div>
+                            О компании <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
+                        <div>
+                            Документы <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-right"></use></svg>
+                            <div class="submenu">
+                                <a href="javascript:">Лицензии</a>
+                                <a href="javascript:">Сертификаты</a>
+                                <a href="javascript:">Политика конфиденциальности</a>
+                                <a href="javascript:">Пользовательское соглашение</a>
+                            </div>
+                        </div>
                         <a href="javascript:void(0)">Партнёры</a>
                     </div>
                 </div>
             </div>
             <a href="javascript:void(0)">Партнёры</a>
             <a href="javascript:void(0)">Контакты</a>
+            <div class="bar"></div>
         </div>
         <div class="header__search">
             <input type="text" placeholder="Поиск">
             <button><svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-search"></use></svg></button>
         </div>
-        <a href="javascript:" class="btn">Расчёт стоимости</a>
+        <a href="javascript:" class="btn" data-modal="rent">Расчёт стоимости</a>
         <div class="hamburger">
             <span></span>
             <span></span>
@@ -93,18 +164,340 @@
 
 <!-- <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-search"></use></svg> -->
 
-<div class="container">
-    <ul>
-        <li><a href="main.html">Главная</a></li>
+<div class="container" style="padding: 40px 0">
+    <ul class="line">
+        <li>
+            <a href="main.html" class="link"><span style="color: #292929">Главная</span></a>
+        </li>
+        <li>
+            <a href="product.html" class="link"><span style="color: #292929">Товар</span></a>
+        </li>
+        <li>Модалки: "Заказать звонок" в шапке, "Рассчитать стоимость" в футере, "Расчёт стоимости" в шапке, "Москва" в шапке</li>
     </ul>
 </div>
 
 <!-- END CONTENT  -->
 </div>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer__row">
+            <div class="footer__col footer__logo">
+                <img src="img/footer-logo.svg" alt="">
+            </div>
+            <div class="footer__menu">
+                <div class="footer__col">
+                    <div class="footer__title">NEW ROAD</div>
+                    <a href="javascript:">О компании</a>
+                    <a href="javascript:">Сертификаты</a>
+                    <a href="javascript:">Отзывы и благодарности</a>
+                    <a href="javascript:">Блог</a>
+                    <a href="javascript:">Контакты</a>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__title">КЛИЕНТАМ</div>
+                    <a href="javascript:">Услуги</a>
+                    <a href="javascript:">Прайс-лист</a>
+                    <a href="javascript:">Калькулятор</a>
+                    <a href="javascript:">Наши работы</a>
+                    <a href="javascript:">Вопросы и ответы</a>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__title">УСЛУГИ</div>
+                    <a href="javascript:">Асфальтирование</a>
+                    <a href="javascript:">Ремонт дорог</a>
+                    <a href="javascript:">Благоустройство</a>
+                    <a href="javascript:">Земляные работы</a>
+                    <a href="javascript:">Уборка и вывоз снега</a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <a href="javascript:" class="btn" data-modal="message">Рассчитать стоимость</a>
+                <div class="footer__phones">
+                    <a href="tel:+7 (495) 740-05-28">+7 (495) 740-05-28</a>
+                    <a href="tel:8 (800) 333-22-33">8 (800) 333-22-33</a>
+                </div>
+                <a href="mailto:info@newroad.ru" class="footer__mail">
+                    <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-letter"></use></svg>
+                    info@newroad.ru
+                </a>
+                <div class="footer__social">
+                    <span>напишите нам в мессенджеры:</span>
+                    <div class="social">
+                        <a href="javascript:">
+                            <img src="img/icons/whatsapp.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/telegram.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/viber.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__addr">
+                    <div>
+                        <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-point"></use></svg>
+                        Москва, ш. Дмитровское, д. 107, к. 2
+                    </div>
+                    <div>
+                        <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-time"></use></svg>
+                        Ежедневно с 8:00 до 21:00
+                    </div>
+                </div>
+                <div class="footer__social">
+                    <span>мы в соцсетях:</span>
+                    <div class="social">
+                        <a href="javascript:">
+                            <img src="img/icons/vk.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/ok.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/youtube.svg" alt="" />
+                        </a>
+                        <a href="javascript:">
+                            <img src="img/icons/twitter.svg" alt="" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__row">
+            <div class="footer__copy">
+                <div>&laquo;NEW ROAD&raquo; &copy;&nbsp;Все права защищены.&nbsp;2023
+                    <div class="list">
+                        <a href="javascript:">Политика конфиденциальности</a>
+                        <div class="flex">
+                            <a href="javascript:">Пользовательское соглашение</a>
+                            <a href="javascript:">Карта сайта</a>
+                        </div>
+                    </div>
+                </div>
+                <div>Вся информация, размещенная на&nbsp;данном сайте, ни&nbsp;при каких <br />  
+обстоятельствах не&nbsp;может считаться публичной офертой <br />   в&nbsp;соответствии со&nbsp;ст.&nbsp;437.2 Гражданского кодекса&nbsp;РФ.</div>
+            </div>
+            
+        </div>
+    </div>
+</footer>
+
+<div class="scrolltop">
+    <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-scrolltop"></use></svg>
+</div>
+
+<div class="backdrop">
+    <div class="modal" data-modal="call">
+        <img src="img/lines-gray.svg" class="ornament" alt="">
+        <div class="modal__content">
+        <div class="modal__close">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="modal__header">Заказать звонок</div>
+        <div class="modal__subtitle">Оставьте заявку и мы свяжемся с вами в ближайшее время</div>
+
+        <form>
+            <div class="form-group">
+                <input type="text" class="gray" placeholder="Имя*">
+                <input type="text" class="gray" placeholder="Телефон*" class="phone-mask">
+            </div>
+            <div class="checkbox gray">
+                <input type="checkbox"  id="checkbox1">
+                <label for="checkbox1">Я даю свое согласие на обработку персональных данных <br>
+                    и соглашаюсь с условиями и <a href="javascript:">политикой конфиденциальности</a></label>
+            </div>
+            <button class="btn btn-black center" data-modal="thanks">Отправить заявку</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="region">
+        <img src="img/lines-gray.svg" class="ornament" alt="">
+        <div class="modal__content">
+            <div class="modal__close">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+                </svg>
+            </div>
+
+            <div class="modal__header">Выбор региона</div>
+        <div class="modal__subtitle">Работаем по всему Московскому региону</div>
+            <form>
+                <div class="search">
+                    <input type="text" class="gray" placeholder="Ваш город">
+                    <button><svg><use xlink:href="img/symbol-defs.svg#icon-search"></use></svg></button>
+                </div>
+                <div class="cities">
+                    <div class="cities__col">
+                        <div class="cities__item">
+                            <div class="cities__letter">А</div>
+                            <a href="javascript:">Апрелевка</a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Г</div>
+                            <a href="javascript:">Голубец</a>
+                            <a href="javascript:">Гродно</a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Ж</div>
+                            <a href="javascript:">Жадов </a>
+                            <a href="javascript:">Жаринов</a>
+                            <a href="javascript:">Жатов</a>
+                            <a href="javascript:">Жин</a>
+                            <a href="javascript:">Жадов </a>
+                            <a href="javascript:">Жаринов</a>
+                            <a href="javascript:">Жатов</a>
+                            <a href="javascript:">Жин</a>
+                        </div>
+                    </div>
+                    <div class="cities__col">
+                        <div class="cities__item">
+                            <div class="cities__letter">Б</div>
+                            <a href="javascript:">Балашиха</a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Д</div>
+                            <a href="javascript:">Дедовск </a>
+                            <a href="javascript:">Дзержинский</a>
+                            <a href="javascript:">Дмитров </a>
+                            <a href="javascript:">Долгопрудный</a>
+                            <a href="javascript:">Домодедово </a>
+                            <a href="javascript:">Дрезна</a>
+                            <a href="javascript:">Дубна  </a>
+                            <a href="javascript:">Дедовск </a>
+                            <a href="javascript:">Дзержинский</a>
+                            <a href="javascript:">Дмитров </a>
+                            <a href="javascript:">Долгопрудный</a>
+                            <a href="javascript:">Домодедово </a>
+                            <a href="javascript:">Дрезна</a>
+                            <a href="javascript:">Дубна  </a>
+                        </div>
+                    </div>
+                    <div class="cities__col">
+                        <div class="cities__item">
+                            <div class="cities__letter">В</div>
+                            <a href="javascript:">Верея </a>
+                        </div>
+                        <div class="cities__item">
+                            <div class="cities__letter">Е</div>
+                            <a href="javascript:">Евпатория</a>
+                            <a href="javascript:">Ейск</a>
+                            <a href="javascript:">Еманжелинск</a>
+                            <a href="javascript:">Елово</a>
+                            <a href="javascript:">Елово-2</a>
+                            <a href="javascript:">Елово-3</a>
+                            <a href="javascript:">Еловый</a>
+                            <a href="javascript:">Евпатория</a>
+                            <a href="javascript:">Ейск</a>
+                            <a href="javascript:">Еманжелинск</a>
+                            <a href="javascript:">Елово</a>
+                            <a href="javascript:">Елово-2</a>
+                            <a href="javascript:">Елово-3</a>
+                            <a href="javascript:">Еловый</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="rent">
+        <img src="img/ornament.svg" class="ornament" alt="">
+        <div class="modal__content">
+        <div class="modal__close">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="modal__header" data-modal="call">Отправить сообщение</div>
+        <div class="modal__subtitle">Оставьте сообщениеи мы свяжемся с вами в ближайшее время</div>
+
+        <form>
+            <div class="form-group">
+                <div class="datepicker">
+                    <div class="datepicker__main">
+                        <span>Дата начала аренды</span>
+                    </div>
+                    <input type="text" id="dateFrom" placeholder="Выбрать дату" class="datepicker__input">
+                </div>
+                <div>
+                    <div>
+                        <input type="text" class="gray" placeholder="Количество смен">
+                        <input type="text" class="gray" placeholder="Имя*">
+                        <input type="text" class="gray" placeholder="Телефон*" class="phone-mask">
+                        <input type="text" class="gray" placeholder="E-mail*">
+                    </div>
+                </div>
+            </div>
+            <textarea placeholder="Текст сообщения" class="gray"></textarea>
+            <div class="checkbox gray">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">Я даю свое согласие на обработку персональных данных <br>
+                    и соглашаюсь с условиями и <a href="javascript:">политикой конфиденциальности</a></label>
+            </div>
+            <button class="btn btn-black center" data-modal="thanks">Отправить сообщение</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="message">
+        <img src="img/ornament.svg" class="ornament" alt="">
+        <div class="modal__content">
+        <div class="modal__close">
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+            </svg>
+        </div>
+        <div class="modal__header" data-modal="call">Отправить сообщение</div>
+        <div class="modal__subtitle">Оставьте сообщениеи мы свяжемся с вами в ближайшее время</div>
+
+        <form>
+            <div class="form-group">
+                <div>
+                    <input type="text" class="gray" placeholder="Имя*">
+                    <input type="text" class="gray" placeholder="Телефон*" class="phone-mask">
+                    <input type="text" class="gray" placeholder="E-mail*">
+                </div>
+                <div>
+                    <textarea placeholder="Текст сообщения" class="gray"></textarea>
+                </div>
+            </div>
+            <div class="checkbox gray">
+                <input type="checkbox" id="checkbox2">
+                <label for="checkbox2">Я даю свое согласие на обработку персональных данных <br>
+                    и соглашаюсь с условиями и <a href="javascript:">политикой конфиденциальности</a></label>
+            </div>
+            <button class="btn btn-black center" data-modal="thanks">Отправить сообщение</button>
+        </form>
+        </div>
+    </div>
+
+    <div class="modal" data-modal="thanks">
+        <img src="img/lines-white.svg" class="ornament" alt="">
+        <div class="modal__content">
+            <div class="modal__close">
+                <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.2288 15L29.7456 1.48318C30.0848 1.14406 30.0848 0.593482 29.7456 0.254358C29.4065 -0.0848283 28.8559 -0.0847651 28.5167 0.254422L15 13.7711L1.48328 0.254422C1.14409 -0.0847651 0.593514 -0.0848282 0.25439 0.254358C-0.0847968 0.593482 -0.0847968 1.14406 0.25439 1.48318L13.7712 15L0.25439 28.5168C-0.0847968 28.8559 -0.0847968 29.4065 0.25439 29.7456C0.593514 30.0848 1.14403 30.0848 1.48322 29.7456L15 16.2288L28.5168 29.7456C28.856 30.0848 29.4065 30.0848 29.7456 29.7456C30.0848 29.4065 30.0848 28.8559 29.7456 28.5168L16.2288 15Z" fill="black"/>
+                </svg>
+            </div>
+            <div class="modal__header" data-modal="call">Спасибо!</div>
+            <div class="modal__text">Ваше сообщение отправлено. <br>
+                Мы свяжемся с вами в ближайшее время</div>
+        </div>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://unpkg.com/imask"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.matchHeight/0.7.2/jquery.matchHeight-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.16.0/moment.min.js"></script>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU&amp;apikey=7c1a3237-498c-4eda-967d-e61fb6cd7442" type="text/javascript"></script>
+<script src="js/jquery.daterangepicker.min.js"></script>
 <script src="js/main.js"></script>
 </body>
 
