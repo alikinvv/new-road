@@ -1080,7 +1080,7 @@ a {
                         right: 0;
                         transform: translateX(100%);
                         top: 0;
-                        background: linear-gradient(95.74deg, #eeeeee -12.93%, rgba(238, 238, 238, 0) 84.45%);
+                        background: #eeeeee;
                         pointer-events: none;
                         opacity: 0;
                         transition: $trans;
@@ -1164,7 +1164,7 @@ a {
                     padding-right: 45px;
                 }
 
-                width: 376px;
+                width: 386px;
                 padding: 13px 9px;
                 padding-right: 45px;
             }
@@ -2433,7 +2433,7 @@ a {
 
 .link {
     font-weight: 400;
-    font-size: 15px;
+    font-size: inherit;
     line-height: 1.4;
     cursor: pointer;
     position: relative;
@@ -2761,6 +2761,10 @@ a {
     position: relative;
 
     &::before {
+        @include r(1365) {
+            width: 200px;
+        }
+
         content: '';
         position: absolute;
         top: 0;
@@ -2773,6 +2777,10 @@ a {
     }
 
     &::after {
+        @include r(1365) {
+            width: 200px;
+        }
+
         content: '';
         position: absolute;
         top: 0;
@@ -2782,6 +2790,11 @@ a {
         width: 400px;
         background: linear-gradient(90deg, rgba(255, 204, 36, 0) 0%, rgba(239, 239, 239, 1) 100%);
         z-index: 2;
+    }
+
+    h2 {
+        position: relative;
+        z-index: 4;
     }
 
     .swiper-container {
@@ -2823,6 +2836,8 @@ a {
 
 .adv {
     margin-top: 59px;
+    position: relative;
+    z-index: 4;
 
     .container {
         background-size: cover;
@@ -2966,7 +2981,7 @@ a {
 
 .map {
     background: url(../img/map.jpg) no-repeat left top #fbfbfb;
-    background-size: contain;
+    background-size: 50%;
     padding: 133px 0;
 
     .container {

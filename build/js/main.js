@@ -66,7 +66,7 @@ var reviews = new Swiper('.reviews .swiper-container', {
     prevEl: '.reviews .swiper-button-prev'
   },
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 3,
       slidesPerGroup: 3
     },
@@ -92,7 +92,7 @@ var specialists = new Swiper('.specialists .swiper-container', {
     prevEl: '.specialists .swiper-button-prev'
   },
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 3,
       slidesPerGroup: 3
     },
@@ -117,7 +117,7 @@ var auto = new Swiper('.auto .swiper-container', {
     prevEl: '.auto .swiper-button-prev'
   },
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 3,
       slidesPerGroup: 3
     },
@@ -138,7 +138,7 @@ var platforms = new Swiper('.platforms .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 4,
       slidesPerGroup: 4
     },
@@ -158,7 +158,7 @@ var certs = new Swiper('.certs .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 3,
       slidesPerGroup: 3
     },
@@ -178,7 +178,7 @@ var clients = new Swiper('.clients .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 5,
       slidesPerGroup: 5
     },
@@ -197,7 +197,7 @@ var projects = new Swiper('.projects .swiper-container', {
   slidesPerGroup: 1,
   spaceBetween: 24,
   breakpoints: {
-    1280: {
+    1279: {
       slidesPerView: 2.1,
       slidesPerGroup: 1
     },
@@ -468,6 +468,11 @@ $(window).on('resize', function () {
     $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 50);
   }
 });
+if ($(window).width() < 1366) {
+  $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 10);
+} else {
+  $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 50);
+}
 $(window).on('scroll', function () {
   if ($(window).scrollTop() > 100) $('.scrolltop').addClass('active');else $('.scrolltop').removeClass('active');
 });
