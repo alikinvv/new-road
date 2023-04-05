@@ -6,10 +6,10 @@ var banner = new Swiper('.banner .swiper-container', {
   spaceBetween: 10,
   centeredSlides: true,
   loop: true,
-  autoplay: {
-    delay: 4000,
-    disableOnInteraction: false
-  },
+  // autoplay: {
+  //     delay: 4000,
+  //     disableOnInteraction: false,
+  // },
   navigation: {
     nextEl: '.banner .swiper-button-next',
     prevEl: '.banner .swiper-button-prev'
@@ -50,6 +50,16 @@ var blog = new Swiper('.blog .swiper-container', {
     nextEl: '.blog .swiper-button-next',
     prevEl: '.blog .swiper-button-prev'
   },
+  breakpoints: {
+    1024: {
+      slidesPerView: 'auto',
+      slidesPerGroup: 2
+    },
+    768: {
+      slidesPerView: 1.5,
+      slidesPerGroup: 1
+    }
+  },
   on: {
     afterInit: function afterInit() {
       $('.blog .swiper-slide').matchHeight();
@@ -66,9 +76,13 @@ var reviews = new Swiper('.reviews .swiper-container', {
     prevEl: '.reviews .swiper-button-prev'
   },
   breakpoints: {
-    768: {
+    1024: {
       slidesPerView: 3,
       slidesPerGroup: 3
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2
     }
   },
   on: {
@@ -109,9 +123,13 @@ var auto = new Swiper('.auto .swiper-container', {
     prevEl: '.auto .swiper-button-prev'
   },
   breakpoints: {
-    768: {
+    1024: {
       slidesPerView: 3,
       slidesPerGroup: 3
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2
     }
   },
   on: {
@@ -126,9 +144,13 @@ var platforms = new Swiper('.platforms .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    768: {
+    1024: {
       slidesPerView: 4,
       slidesPerGroup: 4
+    },
+    768: {
+      slidesPerView: 3,
+      slidesPerGroup: 3
     }
   },
   pagination: {
@@ -142,9 +164,13 @@ var certs = new Swiper('.certs .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
+    1024: {
+      spaceBetween: 24
+    },
     768: {
       slidesPerView: 3,
-      slidesPerGroup: 3
+      slidesPerGroup: 3,
+      spaceBetween: 12
     }
   },
   pagination: {
@@ -158,9 +184,13 @@ var clients = new Swiper('.clients .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    768: {
+    1024: {
       slidesPerView: 5,
       slidesPerGroup: 5
+    },
+    768: {
+      slidesPerView: 4,
+      slidesPerGroup: 4
     }
   },
   navigation: {
@@ -346,12 +376,14 @@ $('body').on('mouseleave', '.header__menu', function (e) {
   }
 });
 $('body').on('click', '.header__menu > a, .header__menu > div', function (e) {
-  $('.header__menu .active').removeClass('active');
-  $(e.currentTarget).addClass('active');
-  $('.header__menu .bar').css({
-    left: $('.header__menu .active').offset().left - $('.header__menu').offset().left,
-    width: $('.header__menu .active').outerWidth()
-  });
+  if ($(window).width() > 1023) {
+    $('.header__menu .active').removeClass('active');
+    $(e.currentTarget).addClass('active');
+    $('.header__menu .bar').css({
+      left: $('.header__menu .active').offset().left - $('.header__menu').offset().left,
+      width: $('.header__menu .active').outerWidth()
+    });
+  }
 });
 if ($('.tabs.line .active').length > 0) {
   $('.tabs.line .bar').stop().animate({
@@ -422,7 +454,43 @@ var closeModal = function closeModal() {
 };
 $('body').on('click', '.modal__close, .modal .close', closeModal);
 $('body').on('click', '.backdrop', function (e) {
-  if ($(e.target)[0].className === 'backdrop active') closeModal();
+  if ($(e.target)[0].className === 'backdrop active') {
+    closeModal();
+    if ($(window).width() < 1024) {
+      $('.header__menu').removeClass('active').removeClass('left').removeClass('left2');
+      $('.menu__item span').parent().removeClass('show');
+      $('.menu__item.show .dropdown__wrapper > div:not(.btn):not(.show)').removeClass('show');
+    }
+  }
+});
+$('body').on('click', '.menu__item span', function (e) {
+  if ($(window).width() < 1024) {
+    $(e.currentTarget).parent().addClass('show');
+    $('.header__menu').addClass('left');
+  }
+});
+$('body').on('click', '.menu__item.show .dropdown__wrapper > div:not(.btn):not(.show)', function (e) {
+  if ($(window).width() < 1024) {
+    $(e.currentTarget).addClass('show');
+    $('.header__menu').addClass('left2');
+  }
+});
+$('body').on('click', '.menu__back', function (e) {
+  if ($('.header__menu').hasClass('left') && !$('.header__menu').hasClass('left2')) {
+    $('.header__menu').removeClass('left');
+    $('.header__menu > div').removeClass('show');
+  } else if ($('.header__menu').hasClass('left') && $('.header__menu').hasClass('left2')) {
+    $('.header__menu').removeClass('left2');
+    $('.header__menu .dropdown__wrapper > div').removeClass('show');
+  }
+});
+$('body').on('click', '.menu__close', function (e) {
+  if ($(window).width() < 1024) {
+    $('.header__menu').removeClass('active').removeClass('left').removeClass('left2');
+    $('.backdrop').removeClass('active');
+    $('.menu__item span').parent().removeClass('show');
+    $('.menu__item.show .dropdown__wrapper > div:not(.btn):not(.show)').removeClass('show');
+  }
 });
 
 // close modal on press ESC
@@ -474,3 +542,26 @@ if ($('.datepicker').length > 0) {
     $('.date-picker-wrapper').css('left', $('.datepicker').offset().left);
   });
 }
+$('.hamburger').on('click', function () {
+  $(this).toggleClass('active');
+  $('.header__menu').toggleClass('active');
+  $('.backdrop').addClass('active');
+});
+$('body').on('click', '.header__mobile', function (e) {
+  $(e.currentTarget).toggleClass('active');
+  $(document).mouseup(function (e) {
+    var container = $('.header__mobile');
+    if (container.has(e.target).length === 0) {
+      container.removeClass('active');
+      $(document).unbind('mouseup');
+      return false;
+    }
+  });
+  $(document).keyup(function (e) {
+    if (e.keyCode == 27) {
+      $('.header__mobile').removeClass('active');
+      $(document).unbind('keyup');
+      return false;
+    }
+  });
+});
