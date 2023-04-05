@@ -66,13 +66,9 @@ var reviews = new Swiper('.reviews .swiper-container', {
     prevEl: '.reviews .swiper-button-prev'
   },
   breakpoints: {
-    1279: {
+    768: {
       slidesPerView: 3,
       slidesPerGroup: 3
-    },
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2
     }
   },
   on: {
@@ -92,13 +88,9 @@ var specialists = new Swiper('.specialists .swiper-container', {
     prevEl: '.specialists .swiper-button-prev'
   },
   breakpoints: {
-    1279: {
+    768: {
       slidesPerView: 3,
       slidesPerGroup: 3
-    },
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2
     }
   },
   on: {
@@ -117,13 +109,9 @@ var auto = new Swiper('.auto .swiper-container', {
     prevEl: '.auto .swiper-button-prev'
   },
   breakpoints: {
-    1279: {
+    768: {
       slidesPerView: 3,
       slidesPerGroup: 3
-    },
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2
     }
   },
   on: {
@@ -138,13 +126,9 @@ var platforms = new Swiper('.platforms .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    1279: {
+    768: {
       slidesPerView: 4,
       slidesPerGroup: 4
-    },
-    768: {
-      slidesPerView: 3,
-      slidesPerGroup: 3
     }
   },
   pagination: {
@@ -158,13 +142,9 @@ var certs = new Swiper('.certs .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    1279: {
+    768: {
       slidesPerView: 3,
       slidesPerGroup: 3
-    },
-    768: {
-      slidesPerView: 2,
-      slidesPerGroup: 2
     }
   },
   pagination: {
@@ -178,13 +158,9 @@ var clients = new Swiper('.clients .swiper-container', {
   spaceBetween: 24,
   loop: true,
   breakpoints: {
-    1279: {
+    768: {
       slidesPerView: 5,
       slidesPerGroup: 5
-    },
-    768: {
-      slidesPerView: 4,
-      slidesPerGroup: 4
     }
   },
   navigation: {
@@ -197,12 +173,8 @@ var projects = new Swiper('.projects .swiper-container', {
   slidesPerGroup: 1,
   spaceBetween: 24,
   breakpoints: {
-    1279: {
-      slidesPerView: 2.1,
-      slidesPerGroup: 1
-    },
     768: {
-      slidesPerView: 1,
+      slidesPerView: 2.1,
       slidesPerGroup: 1
     }
   },
@@ -313,7 +285,7 @@ $('body').on('click', '.question', function (e) {
 });
 ymaps.ready(function () {
   var myMap = new ymaps.Map('map', {
-      center: [55.746499, 37.329568],
+      center: $(window).width() < 1280 ? [55.738805, 37.481692] : [55.746499, 37.329568],
       zoom: 11
     }, {
       searchControlProvider: 'yandex#search'
