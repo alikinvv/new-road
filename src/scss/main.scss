@@ -1721,6 +1721,12 @@ a {
             @include flexitem(50%, 2px, 4px);
         }
 
+        @include r(413) {
+            @include flexitem(100%, 2px, 4px);
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+
         @include flexitem(25%, 2px, 4px);
         background: #f1f1f1;
         display: flex;

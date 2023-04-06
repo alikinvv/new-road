@@ -51,8 +51,12 @@ var blog = new Swiper('.blog .swiper-container', {
     prevEl: '.blog .swiper-button-prev'
   },
   breakpoints: {
-    1024: {
+    1150: {
       slidesPerView: 'auto',
+      slidesPerGroup: 2
+    },
+    1024: {
+      slidesPerView: 2,
       slidesPerGroup: 2
     },
     768: {
