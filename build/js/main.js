@@ -42,8 +42,8 @@ var works = new Swiper('.works .swiper-container', {
   }
 });
 var blog = new Swiper('.blog .swiper-container', {
-  slidesPerView: 'auto',
-  slidesPerGroup: 2,
+  slidesPerView: 1,
+  slidesPerGroup: 1,
   spaceBetween: 10,
   loop: true,
   navigation: {
@@ -93,9 +93,9 @@ var reviews = new Swiper('.reviews .swiper-container', {
   }
 });
 var specialists = new Swiper('.specialists .swiper-container', {
-  slidesPerView: 1,
+  slidesPerView: 1.2,
   slidesPerGroup: 1,
-  spaceBetween: 24,
+  spaceBetween: 12,
   loop: true,
   navigation: {
     nextEl: '.specialists .swiper-button-next',
@@ -104,7 +104,8 @@ var specialists = new Swiper('.specialists .swiper-container', {
   breakpoints: {
     768: {
       slidesPerView: 3,
-      slidesPerGroup: 3
+      slidesPerGroup: 3,
+      spaceBetween: 24
     }
   },
   on: {
@@ -139,8 +140,8 @@ var auto = new Swiper('.auto .swiper-container', {
   }
 });
 var platforms = new Swiper('.platforms .swiper-container', {
-  slidesPerView: 2,
-  slidesPerGroup: 2,
+  slidesPerView: 1.5,
+  slidesPerGroup: 1,
   spaceBetween: 24,
   loop: true,
   breakpoints: {
@@ -179,8 +180,8 @@ var certs = new Swiper('.certs .swiper-container', {
   }
 });
 var clients = new Swiper('.clients .swiper-container', {
-  slidesPerView: 3,
-  slidesPerGroup: 3,
+  slidesPerView: 2,
+  slidesPerGroup: 2,
   spaceBetween: 24,
   loop: true,
   breakpoints: {
@@ -315,7 +316,7 @@ $('body').on('click', '.question', function (e) {
 });
 ymaps.ready(function () {
   var myMap = new ymaps.Map('map', {
-      center: $(window).width() < 1280 ? [55.738805, 37.481692] : [55.746499, 37.329568],
+      center: $(window).width() < 1280 ? $(window).width() < 768 ? [55.76, 37.64] : [55.738805, 37.481692] : [55.746499, 37.329568],
       zoom: 11
     }, {
       searchControlProvider: 'yandex#search'
