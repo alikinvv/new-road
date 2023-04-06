@@ -2530,6 +2530,16 @@ a {
         padding: 23px 33px 33px;
     }
 
+    &.hide-768 {
+        @include r(1034) {
+            display: none;
+        }
+
+        @include r(767) {
+            display: block;
+        }
+    }
+
     &__more {
         position: relative;
         top: -60px;
@@ -3045,6 +3055,10 @@ a {
     }
 
     &__author {
+        @include r(767) {
+            margin-bottom: 15px;
+        }
+
         display: flex;
         align-items: center;
 
@@ -3227,6 +3241,11 @@ a {
     }
 
     &-input {
+        @include r(767) {
+            padding: 14px 15px;
+            justify-content: flex-start;
+        }
+
         margin-right: 0;
         padding: 14px 24px;
         transition: $trans;
@@ -3237,6 +3256,10 @@ a {
         border-radius: 3px;
 
         span {
+            @include r(767) {
+                font-size: 16px;
+            }
+
             margin-right: 10px;
             font-weight: 700;
             font-size: 17px;
@@ -4838,6 +4861,10 @@ a {
     }
 
     .product__features {
+        @include r(767) {
+            width: 100%;
+        }
+
         width: 50%;
     }
 }
@@ -4901,6 +4928,10 @@ blockquote {
     margin-bottom: 37px;
 
     &.line {
+        @include r(767) {
+            justify-content: flex-start;
+        }
+
         border-bottom: 4px solid #e6e6e6;
         justify-content: center;
         padding-bottom: 3px;
@@ -4924,6 +4955,15 @@ blockquote {
         }
 
         div {
+            @include r(1023) {
+                font-size: 16px;
+            }
+
+            @include r(767) {
+                margin-left: 0;
+                margin-right: 20px;
+            }
+
             border: 0;
             padding: 0;
             font-weight: 700;
@@ -5236,6 +5276,16 @@ blockquote {
     margin-bottom: 36px;
 
     .container {
+        @include r(1170) {
+            padding: 9px 15px;
+        }
+
+        @include r(767) {
+            white-space: nowrap;
+            overflow-x: scroll;
+            -webkit-overflow-scrolling: touch;
+        }
+
         padding: 8px 0;
         border-top: 1px solid #d9d9d9;
         display: flex;
@@ -5269,6 +5319,10 @@ blockquote {
         margin-bottom: 70px;
     }
 
+    @include r(767) {
+        margin-bottom: 20px;
+    }
+
     margin-bottom: 101px;
 
     .slider__controls {
@@ -5276,16 +5330,42 @@ blockquote {
     }
 
     .container {
+        @include r(1023) {
+            position: relative;
+            padding-bottom: 60px;
+        }
+
+        @include r(767) {
+            display: block;
+            padding-bottom: 0;
+        }
+
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
 
         & > div {
+            @include r(1023) {
+                width: 56%;
+
+                &:first-child {
+                    width: 40%;
+                }
+            }
+
+            @include r(767) {
+                width: 100% !important;
+            }
+
             width: 49%;
         }
     }
 
     &__main {
+        @include r(767) {
+            margin-bottom: 15px;
+        }
+
         border: 1px solid #eaeaea;
         border-radius: 3px;
         position: relative;
@@ -5310,6 +5390,10 @@ blockquote {
 
     &__nav {
         .swiper-slide {
+            @include r(767) {
+                padding-bottom: 33%;
+            }
+
             border: 1px solid #eaeaea;
             padding-bottom: 22%;
             background-size: cover;
@@ -5320,6 +5404,13 @@ blockquote {
     }
 
     &__info {
+        @include r(767) {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
         .h2 {
             line-height: 1.24;
             margin-bottom: 14px;
@@ -5333,6 +5424,10 @@ blockquote {
     }
 
     &__features {
+        @include r(767) {
+            width: 100%;
+        }
+
         margin-bottom: 15px;
 
         &.hide {
@@ -5350,6 +5445,10 @@ blockquote {
                 margin-bottom: -5px;
 
                 &:first-child {
+                    @include r(1023) {
+                        font-size: 16px;
+                    }
+
                     font-weight: 300;
                     font-size: 17px;
                     letter-spacing: 0.02em;
@@ -5358,6 +5457,10 @@ blockquote {
                 }
 
                 &:last-child {
+                    @include r(1023) {
+                        font-size: 16px;
+                    }
+
                     font-weight: 300;
                     font-size: 17px;
                     text-align: right;
@@ -5370,6 +5473,26 @@ blockquote {
     }
 
     .card__prices {
+        @include r(1279) {
+            width: 80%;
+        }
+
+        @include r(1023) {
+            width: 100%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            & > div:first-child::after {
+                right: 28px;
+            }
+        }
+
+        @include r(767) {
+            & > div:first-child::after {
+                right: 13px;
+            }
+        }
+
         margin-top: 46px;
         margin-bottom: 42px;
         width: 70%;
@@ -5390,12 +5513,34 @@ blockquote {
     }
 
     .btn {
+        @include r(767) {
+            width: 100%;
+            padding-left: 0;
+            padding-right: 0;
+            text-align: center;
+            order: 10;
+            margin-top: 20px;
+        }
+
         font-size: 18px;
         margin-bottom: 42px;
         padding: 17px 72px;
     }
 
     &__delivery {
+        @include r(1023) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        @include r(767) {
+            position: static;
+            margin-left: -15px;
+            width: calc(100% + 30px);
+        }
+
         background: #f1f1f1;
         display: flex;
         align-items: center;
@@ -5547,6 +5692,7 @@ blockquote {
     &-form {
         @include r(1023) {
             margin-bottom: 60px;
+            margin-top: 40px;
         }
 
         @include r(767) {
@@ -5573,7 +5719,7 @@ blockquote {
             }
 
             @include r(767) {
-                padding: 30px 30px;
+                padding: 0;
                 border-radius: 0;
                 width: 100%;
                 margin: 0;
