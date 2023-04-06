@@ -1443,7 +1443,7 @@ a {
             @include r(767) {
                 position: absolute;
                 right: 15px;
-                top: 4px;
+                top: 8px;
                 left: 15px;
                 z-index: 11;
                 display: flex;
@@ -1451,7 +1451,7 @@ a {
 
                 button {
                     position: relative;
-                    top: 13px;
+                    top: 10px;
                 }
             }
 
@@ -1466,7 +1466,7 @@ a {
 
                 @include r(767) {
                     width: 100%;
-                    padding: 16px 9px;
+                    padding: 12px 9px;
                     padding-right: 45px;
                 }
 
@@ -1719,9 +1719,10 @@ a {
 
         @include r(767) {
             @include flexitem(50%, 2px, 4px);
+            font-size: 15px;
         }
 
-        @include r(413) {
+        @include r(374) {
             @include flexitem(100%, 2px, 4px);
             padding-top: 15px;
             padding-bottom: 15px;
@@ -4924,6 +4925,7 @@ blockquote {
     @include r(767) {
         white-space: nowrap;
         overflow-x: auto;
+        overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
     }
 
@@ -4934,6 +4936,8 @@ blockquote {
     &.line {
         @include r(767) {
             justify-content: flex-start;
+            padding-bottom: 7px;
+            border-bottom: 0;
         }
 
         border-bottom: 4px solid #e6e6e6;
@@ -4981,6 +4985,11 @@ blockquote {
         }
 
         .bar {
+            @include r(767) {
+                bottom: 0;
+                border-radius: 0;
+            }
+
             position: absolute;
             bottom: -4px;
             left: 0;
@@ -5954,7 +5963,7 @@ blockquote {
 .date-picker-wrapper {
     @include r(767) {
         // width: calc(100vw - 84px);
-        top: -119px;
+        // top: -119px;
     }
 
     background: #fff;
@@ -6121,6 +6130,10 @@ blockquote {
 }
 
 .cities {
+    @include r(767) {
+        margin-left: -10px;
+    }
+
     max-height: 291px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -6148,11 +6161,20 @@ blockquote {
     }
 
     &__col {
+        @include r(767) {
+            padding: 0 10px;
+            width: 33.33%;
+        }
+
         width: 32%;
         padding: 0 20px;
     }
 
     &__letter {
+        @include r(767) {
+            font-size: 16px;
+        }
+
         font-weight: 700;
         font-size: 19px;
         display: block;
@@ -6161,9 +6183,17 @@ blockquote {
     }
 
     &__item {
+        @include r(767) {
+            margin-bottom: 20px;
+        }
+
         margin-bottom: 32px;
 
         a {
+            @include r(767) {
+                font-size: 12px;
+            }
+
             font-weight: 300;
             font-size: 15px;
             color: #222222;
