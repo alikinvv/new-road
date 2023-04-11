@@ -132,14 +132,14 @@
 <section class="desc text">
     <div class="container">
         <div class="tabs line">
-            <div data-tab="d1" class="active">Описание</div>
-            <div data-tab="d2">Технические характеристики</div>
-            <div data-tab="d3">Отзывы <span class="header__count">35</span></div>
-            <div data-tab="d4">Вас может заинтересовать</div>
+            <div data-scroll=".s1" class="active">Описание</div>
+            <div data-scroll=".s2">Технические характеристики</div>
+            <div data-scroll=".s3">Отзывы <span class="header__count">35</span></div>
+            <div data-scroll=".s4">Вас может заинтересовать</div>
             <div class="bar"></div>
         </div>
 
-        <div class="tab active" data-tab="d1">
+        <div class="tab s1 active" data-tab="d1">
             <h2>1Подробнее о дорожно-строительных работах</h2>
 
             <p>
@@ -182,7 +182,7 @@
                 решительно транслирует комплексный интеграл.
             </p>
         </div>
-        <div class="tab" data-tab="d2">
+        <div class="tab active s2" data-tab="d2">
             <h2>Технические характеристики</h2>
             <div class="product__features">
                 <div>
@@ -207,7 +207,7 @@
                 </div>
             </div>
         </div>
-        <div class="tab" data-tab="d3">
+        <div class="tab active s3" data-tab="d3">
             <h2>Отзывы <sup>39</sup></h2>
             <div class="comments__card">
                 <div class="comments__top">
@@ -414,135 +414,270 @@
                 </div>
             </div>
         </div>
-        <div class="tab" data-tab="d4">
-            <section class="items">
+        <div class="tab active s4" data-tab="d4">
+            <section class="items items-slider">
                 <h2>Вас может заинтересовать</h2>
 
-                <div class="items__wrapper">
-                    <a href="javascript:" class="card">
-                        <div class="card__img" style="background-image: url(img/i1.jpg)"></div>
-                        <div class="card__info">
-                            <div class="card__title">Асфальтоукладчик Vogele&nbsp;1500</div>
-                            <div class="card__features">
-                                <span>Вес, кг</span>
-                                <span>8200 </span>
-                            </div>
-                            <div class="card__features">
-                                <span>Производитель</span>
-                                <span>Vogele</span>
-                            </div>
-                            <div class="card__features">
-                                <span>Размер, мм</span>
-                                <span>6320 х 2365 х 3752</span>
-                            </div>
-                            <div class="card__features">
-                                <span>Грузоподъёмность, кг</span>
-                                <span>2500</span>
-                            </div>
+                <div class="int swiper-container">
+                    <div class="swiper-wrapper">
+                        <a href="javascript:" class="swiper-slide card">
+                            <div class="card__img" style="background-image: url(img/i1.jpg)"></div>
+                            <div class="card__info">
+                                <div class="card__title">Асфальтоукладчик Vogele&nbsp;1500</div>
+                                <div class="card__features">
+                                    <span>Вес, кг</span>
+                                    <span>8200 </span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Производитель</span>
+                                    <span>Vogele</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Размер, мм</span>
+                                    <span>6320 х 2365 х 3752</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Грузоподъёмность, кг</span>
+                                    <span>2500</span>
+                                </div>
 
-                            <div class="card__prices">
-                                <div>
-                                    <span>цена за час</span>
-                                    <div class="price">
-                                        <span>75 000 ₽</span>
-                                        <strong>15 000</strong>
+                                <div class="card__prices">
+                                    <div>
+                                        <span>цена за час</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>цена за смену</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <span>цена за смену</span>
-                                    <div class="price">
-                                        <span>75 000 ₽</span>
-                                        <strong>15 000</strong>
-                                    </div>
+                                <button class="btn">Заказать технику</button>
+                            </div>
+                        </a>
+                        <a href="javascript:" class="swiper-slide card">
+                            <div class="card__img" style="background-image: url(img/i2.jpg)"></div>
+                            <div class="card__info">
+                                <div class="card__title">Асфальтоукладчик Vogele</div>
+                                <div class="card__features">
+                                    <span>Вес, кг</span>
+                                    <span>8200 </span>
                                 </div>
-                            </div>
-                            <button class="btn">Заказать технику</button>
-                        </div>
-                    </a>
-                    <a href="javascript:" class="card">
-                        <div class="card__img" style="background-image: url(img/i2.jpg)"></div>
-                        <div class="card__info">
-                            <div class="card__title">Асфальтоукладчик Vogele</div>
-                            <div class="card__features">
-                                <span>Вес, кг</span>
-                                <span>8200 </span>
-                            </div>
-                            <div class="card__features">
-                                <span>Производитель</span>
-                                <span>Vogele</span>
-                            </div>
-                            <div class="card__features">
-                                <span>Размер, мм</span>
-                                <span>6320 х 2365 х 3752</span>
-                            </div>
-                            <div class="card__features">
-                                <span>Грузоподъёмность, кг</span>
-                                <span>2500</span>
-                            </div>
+                                <div class="card__features">
+                                    <span>Производитель</span>
+                                    <span>Vogele</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Размер, мм</span>
+                                    <span>6320 х 2365 х 3752</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Грузоподъёмность, кг</span>
+                                    <span>2500</span>
+                                </div>
 
-                            <div class="card__prices">
-                                <div>
-                                    <span>цена за час</span>
-                                    <div class="price">
-                                        <span>75 000 ₽</span>
-                                        <strong>15 000</strong>
+                                <div class="card__prices">
+                                    <div>
+                                        <span>цена за час</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>цена за смену</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <span>цена за смену</span>
-                                    <div class="price">
-                                        <span>75 000 ₽</span>
-                                        <strong>15 000</strong>
-                                    </div>
+                                <button class="btn">Заказать технику</button>
+                            </div>
+                        </a>
+                        <a href="javascript:" class="swiper-slide card hide-768">
+                            <div class="card__img" style="background-image: url(img/i3.jpg)">
+                                <div class="card__percent">
+                                    <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-percent"></use></svg>
                                 </div>
                             </div>
-                            <button class="btn">Заказать технику</button>
-                        </div>
-                    </a>
-                    <a href="javascript:" class="card hide-768">
-                        <div class="card__img" style="background-image: url(img/i3.jpg)">
-                            <div class="card__percent">
-                                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-percent"></use></svg>
-                            </div>
-                        </div>
-                        <div class="card__info">
-                            <div class="card__title">Асфальтоукладчик Vogele&nbsp;1500</div>
-                            <div class="card__features">
-                                <span>Вес, кг</span>
-                                <span>8200 </span>
-                            </div>
-                            <div class="card__features">
-                                <span>Производитель</span>
-                                <span>Vogele</span>
-                            </div>
-                            <div class="card__features">
-                                <span>Размер, мм</span>
-                                <span>6320 х 2365 х 3752</span>
-                            </div>
-                            <div class="card__features">
-                                <span>Грузоподъёмность, кг</span>
-                                <span>2500</span>
-                            </div>
+                            <div class="card__info">
+                                <div class="card__title">Асфальтоукладчик Vogele&nbsp;1500</div>
+                                <div class="card__features">
+                                    <span>Вес, кг</span>
+                                    <span>8200 </span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Производитель</span>
+                                    <span>Vogele</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Размер, мм</span>
+                                    <span>6320 х 2365 х 3752</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Грузоподъёмность, кг</span>
+                                    <span>2500</span>
+                                </div>
 
-                            <div class="card__prices">
-                                <div>
-                                    <span>цена за час</span>
-                                    <div class="price">
-                                        <span>75 000 ₽</span>
-                                        <strong>15 000</strong>
+                                <div class="card__prices">
+                                    <div>
+                                        <span>цена за час</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>цена за смену</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
                                     </div>
                                 </div>
-                                <div>
-                                    <span>цена за смену</span>
-                                    <div class="price">
-                                        <span>75 000 ₽</span>
-                                        <strong>15 000</strong>
+                                <button class="btn">Заказать технику</button>
+                            </div>
+                        </a>
+                        <a href="javascript:" class="swiper-slide card">
+                            <div class="card__img" style="background-image: url(img/i1.jpg)"></div>
+                            <div class="card__info">
+                                <div class="card__title">Асфальтоукладчик Vogele&nbsp;1500</div>
+                                <div class="card__features">
+                                    <span>Вес, кг</span>
+                                    <span>8200 </span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Производитель</span>
+                                    <span>Vogele</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Размер, мм</span>
+                                    <span>6320 х 2365 х 3752</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Грузоподъёмность, кг</span>
+                                    <span>2500</span>
+                                </div>
+
+                                <div class="card__prices">
+                                    <div>
+                                        <span>цена за час</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
                                     </div>
+                                    <div>
+                                        <span>цена за смену</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn">Заказать технику</button>
+                            </div>
+                        </a>
+                        <a href="javascript:" class="swiper-slide card">
+                            <div class="card__img" style="background-image: url(img/i2.jpg)"></div>
+                            <div class="card__info">
+                                <div class="card__title">Асфальтоукладчик Vogele</div>
+                                <div class="card__features">
+                                    <span>Вес, кг</span>
+                                    <span>8200 </span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Производитель</span>
+                                    <span>Vogele</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Размер, мм</span>
+                                    <span>6320 х 2365 х 3752</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Грузоподъёмность, кг</span>
+                                    <span>2500</span>
+                                </div>
+
+                                <div class="card__prices">
+                                    <div>
+                                        <span>цена за час</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>цена за смену</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn">Заказать технику</button>
+                            </div>
+                        </a>
+                        <a href="javascript:" class="swiper-slide card hide-768">
+                            <div class="card__img" style="background-image: url(img/i3.jpg)">
+                                <div class="card__percent">
+                                    <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-percent"></use></svg>
                                 </div>
                             </div>
-                            <button class="btn">Заказать технику</button>
-                        </div>
-                    </a>
+                            <div class="card__info">
+                                <div class="card__title">Асфальтоукладчик Vogele&nbsp;1500</div>
+                                <div class="card__features">
+                                    <span>Вес, кг</span>
+                                    <span>8200 </span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Производитель</span>
+                                    <span>Vogele</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Размер, мм</span>
+                                    <span>6320 х 2365 х 3752</span>
+                                </div>
+                                <div class="card__features">
+                                    <span>Грузоподъёмность, кг</span>
+                                    <span>2500</span>
+                                </div>
+
+                                <div class="card__prices">
+                                    <div>
+                                        <span>цена за час</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <span>цена за смену</span>
+                                        <div class="price">
+                                            <span>75 000 ₽</span>
+                                            <strong>15 000</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn">Заказать технику</button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="slider__controls slider__controls-center">
+                    <div class="swiper-button-prev">
+                        <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-left"></use></svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-right"></use></svg>
+                    </div>
                 </div>
             </section>
         </div>

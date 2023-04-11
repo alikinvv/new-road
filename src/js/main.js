@@ -109,6 +109,11 @@ let specialists = new Swiper('.specialists .swiper-container', {
         prevEl: '.specialists .swiper-button-prev',
     },
     breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            spaceBetween: 140,
+        },
         768: {
             slidesPerView: 3,
             slidesPerGroup: 3,
@@ -176,6 +181,8 @@ let certs = new Swiper('.certs .swiper-container', {
     loop: true,
     breakpoints: {
         1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
             spaceBetween: 24,
         },
         768: {
@@ -215,6 +222,7 @@ let projects = new Swiper('.projects .swiper-container', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 24,
+    loop: true,
     breakpoints: {
         768: {
             slidesPerView: 2.1,
@@ -230,6 +238,27 @@ let projects = new Swiper('.projects .swiper-container', {
             $('.projects__text').matchHeight();
             $('.projects__company').matchHeight();
         },
+    },
+});
+
+let int = new Swiper('.int.swiper-container', {
+    slidesPerView: 1,
+    slidesPerGroup: 1,
+    spaceBetween: 24,
+    loop: true,
+    breakpoints: {
+        1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+        },
+        768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+        },
+    },
+    navigation: {
+        nextEl: '.items .swiper-button-next',
+        prevEl: '.items .swiper-button-prev',
     },
 });
 
@@ -254,6 +283,7 @@ var productNav = new Swiper('.product__nav', {
 });
 var productMain = new Swiper('.product__main', {
     spaceBetween: 10,
+    loop: true,
     thumbs: {
         swiper: productNav,
     },
@@ -354,7 +384,7 @@ ymaps.ready(function () {
             }
         ),
         // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #000; font-weight: bold;">$[properties.iconContent]</div>'),
         myPlacemark = new ymaps.Placemark(
             [55.76, 37.64],
             {
@@ -363,10 +393,10 @@ ymaps.ready(function () {
             },
             {
                 iconLayout: 'default#imageWithContent',
-                iconImageHref: 'img/point.svg',
+                iconImageHref: 'img/icons/map.svg',
                 iconImageSize: [30, 42],
                 iconImageOffset: [-5, -38],
-                iconContentOffset: [11, 12],
+                iconContentOffset: [10, 12],
                 iconContentLayout: MyIconContentLayout,
             }
         ),
@@ -378,7 +408,7 @@ ymaps.ready(function () {
             },
             {
                 iconLayout: 'default#imageWithContent',
-                iconImageHref: 'img/point.svg',
+                iconImageHref: 'img/icons/map.svg',
                 iconImageSize: [30, 42],
                 iconImageOffset: [-5, -38],
                 iconContentOffset: [10, 12],
@@ -432,44 +462,44 @@ $('body').on('click', '.header__menu > a, .header__menu > div', (e) => {
     }
 });
 
-if ($('.tabs.line .active').length > 0) {
-    $('.tabs.line .bar')
-        .stop()
-        .animate({
-            left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
-            width: $('.tabs.line .active').outerWidth(),
-        });
-}
+// if ($('.tabs.line .active').length > 0) {
+//     $('.tabs.line .bar')
+//         .stop()
+//         .animate({
+//             left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
+//             width: $('.tabs.line .active').outerWidth(),
+//         });
+// }
 
-$('body').on('mouseenter', '.tabs.line > div', (e) => {
-    $('.tabs.line .bar')
-        .stop()
-        .animate({ left: $(e.currentTarget).offset().left - $('.tabs.line').offset().left, width: $(e.currentTarget).outerWidth() });
-});
+// $('body').on('mouseenter', '.tabs.line > div', (e) => {
+//     $('.tabs.line .bar')
+//         .stop()
+//         .animate({ left: $(e.currentTarget).offset().left - $('.tabs.line').offset().left, width: $(e.currentTarget).outerWidth() });
+// });
 
-$('body').on('mouseleave', '.tabs.line', (e) => {
-    if ($('.tabs.line .active').length > 0) {
-        $('.tabs.line .bar')
-            .stop()
-            .animate({
-                left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
-                width: $('.tabs.line .active').outerWidth(),
-            });
-    } else {
-        $('.tabs.line .bar').stop().animate({ left: 0, width: 0 });
-    }
-});
+// $('body').on('mouseleave', '.tabs.line', (e) => {
+//     if ($('.tabs.line .active').length > 0) {
+//         $('.tabs.line .bar')
+//             .stop()
+//             .animate({
+//                 left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
+//                 width: $('.tabs.line .active').outerWidth(),
+//             });
+//     } else {
+//         $('.tabs.line .bar').stop().animate({ left: 0, width: 0 });
+//     }
+// });
 
 $('body').on('click', '.tabs.line > div', (e) => {
-    $('.tabs.line .active').removeClass('active');
-    $(e.currentTarget).addClass('active');
-    $('.tabs.line .bar').css({
-        left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
-        width: $('.tabs.line .active').outerWidth(),
-    });
+    // $('.tabs.line .active').removeClass('active');
+    // $(e.currentTarget).addClass('active');
+    // $('.tabs.line .bar').css({
+    //     left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
+    //     width: $('.tabs.line .active').outerWidth(),
+    // });
 });
 
-$('body').on('click', '.tabs div', (e) => {
+$('body').on('click', '.tabs:not(.line) div', (e) => {
     $('.tabs div').removeClass('active');
     $(e.currentTarget).addClass('active');
     $('.tab').removeClass('active');
@@ -477,9 +507,14 @@ $('body').on('click', '.tabs div', (e) => {
     $('.card__title').matchHeight();
 });
 
-$('body').on('click', '.product__info .link', (e) => {
-    $(e.currentTarget).remove();
+$('body').on('click', '.product__info .link:not(.active)', (e) => {
+    $(e.currentTarget).addClass('active').find('span').html('Свернуть');
     $('.product__features.hide').slideDown(300);
+});
+
+$('body').on('click', '.product__info .link.active', (e) => {
+    $(e.currentTarget).removeClass('active').find('span').html('Все характеристики');
+    $('.product__features.hide').slideUp(300);
 });
 
 // show modal
@@ -622,7 +657,13 @@ if ($('.datepicker').length > 0) {
 $('.hamburger').on('click', function () {
     $(this).toggleClass('active');
     $('.header__menu').toggleClass('active');
-    $('.backdrop').addClass('active');
+    $('.backdrop').toggleClass('active');
+
+    if (!$('.backdrop').hasClass('active')) {
+        $('.header__menu').removeClass('active').removeClass('left').removeClass('left2');
+        $('.menu__item span').parent().removeClass('show');
+        $('.menu__item.show .dropdown__wrapper > div:not(.btn):not(.show)').removeClass('show');
+    }
 });
 
 $('body').on('click', '.header__mobile', (e) => {
@@ -651,3 +692,20 @@ if ($(window).width() < 1280) {
     $('.breadcrumbs .container').scrollLeft(left);
     $('.product__sliders').prepend($('.product__info .h2'));
 }
+
+if ($(window).width >= 1024) {
+    var sticky1 = new Sticky('.top');
+    var sticky2 = new Sticky('.header');
+}
+
+$('body').on('click', '[data-scroll]', (e) => {
+    e.preventDefault();
+    let target = $(e.currentTarget).attr('data-scroll');
+    $('html, body').animate({ scrollTop: $(target).offset().top - 100 }, 500);
+});
+
+$('body').on('click', '.footer__title', (e) => {
+    if ($(window).width() < 767) {
+        $(e.currentTarget).parent().toggleClass('active');
+    }
+});

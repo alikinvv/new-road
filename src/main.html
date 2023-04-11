@@ -6,9 +6,9 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide" style="background-image: url(img/slide1.jpg)">
-                    <div class="main__title">
+                    <h1 class="main__title">
                         <span>Асфальтирование дорог</span> <span>и&nbsp;территорий от&nbsp;390&nbsp;₽/м<sup>2</sup></span>
-                    </div>
+                    </h1>
                     <div class="main__text">Консультация специалиста, выезд на&nbsp;объект и&nbsp;составление сметы бесплатно</div>
                     <div class="timer">
                         до конца спецпредложения осталось:
@@ -41,7 +41,11 @@
                     <div class="main__title">
                         <span>Асфальтирование дорог</span> <span>и&nbsp;территорий от&nbsp;390&nbsp;₽/м<sup>2</sup></span>
                     </div>
-                    <div class="main__text">Консультация специалиста, выезд на&nbsp;объект и&nbsp;составление сметы бесплатно</div>
+                    <ul>
+                        <li>Гарантия 24 месяца на все работы</li>
+                        <li>720 реализованных объекта</li>
+                        <li>Соблюдаем ГОСТы и СНИПы</li>
+                    </ul>
                     <div class="timer">
                         до конца спецпредложения осталось:
                         <div class="timer__wrapper">
@@ -236,12 +240,6 @@
                 >
             </a>
         </div>
-        <div class="more">
-            <a href="javascript:"
-                >Все услуги
-                <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-more"></use></svg>
-            </a>
-        </div>
     </div>
 </section>
 
@@ -273,15 +271,15 @@
     <div class="container">
         <h2>Цены на услуги</h2>
         <div class="prices__tags">
-            <div class="active">Асфальтирование дорог</div>
-            <div>Ремонт дорог</div>
-            <div>Ямочный ремонт</div>
-            <div>Укладка асфальтной крошки</div>
-            <div>Дорожная разметка</div>
-            <div>Все цены</div>
+            <div class="active" data-scroll=".table2">Асфальтирование дорог</div>
+            <div data-scroll=".table1">Ремонт дорог</div>
+            <div data-scroll=".table2">Ямочный ремонт</div>
+            <div data-scroll=".table1">Укладка асфальтной крошки</div>
+            <div data-scroll=".table2">Дорожная разметка</div>
+            <a href="javascript:">Все цены</a>
         </div>
 
-        <div class="prices__wrapper">
+        <div class="prices__wrapper table1">
             <table>
                 <thead>
                     <tr>
@@ -399,7 +397,7 @@
             </table>
         </div>
 
-        <div class="prices__wrapper">
+        <div class="prices__wrapper table2">
             <table>
                 <thead>
                     <tr>
@@ -704,7 +702,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn">Заказать технику</button>
+                    <button class="btn">Перейти в каталог</button>
                 </div>
             </a>
             <a href="javascript:" class="card">
@@ -744,7 +742,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn">Заказать технику</button>
+                    <button class="btn">Перейти в каталог</button>
                 </div>
             </a>
             <a href="javascript:" class="card">
@@ -788,7 +786,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn">Заказать технику</button>
+                    <button class="btn">Перейти в каталог</button>
                 </div>
             </a>
             <a href="javascript:" class="card">
@@ -828,7 +826,7 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn">Заказать технику</button>
+                    <button class="btn">Перейти в каталог</button>
                 </div>
             </a>
             <a href="javascript:" class="card">
@@ -868,12 +866,12 @@
                             </div>
                         </div>
                     </div>
-                    <button class="btn">Заказать технику</button>
+                    <button class="btn">Перейти в каталог</button>
                 </div>
             </a>
             <a href="javascript:" class="card card-full" style="background-image: url(img/i-full.jpg)">
                 <img src="img/more.svg" alt="" class="card__more" />
-                <button class="btn">Заказать технику</button>
+                <button class="btn">Перейти в каталог</button>
             </a>
         </div>
     </div>
@@ -1041,8 +1039,8 @@
                             <div class="reviews__author-text">директор ООО «Роад муви»</div>
                         </div>
                     </div>
-                    <div class="zoom" data-modal="review-full">
-                        <img src="img/review1.jpg" data-fancybox="video2" data-src="img/review1.jpg" alt="" />
+                    <div class="zoom" data-fancybox="video2" data-src="img/review1.jpg">
+                        <img src="img/review1.jpg" alt="" />
                         <div class="zoom__btn">
                             <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
                         </div>
@@ -1058,7 +1056,7 @@
                             <div class="reviews__author-text">директор ООО «Роад муви»</div>
                         </div>
                     </div>
-                    <div class="video" data-fancybox="video2" data-src="img/review2.jpg">
+                    <div class="video" data-fancybox="video2" data-src="https://www.youtube.com/watch?v=JnaseAj1kME">
                         <img src="img/review2.jpg" alt="" />
                         <div class="video__play">
                             <img src="img/icons/play.svg" alt="" />
@@ -1105,7 +1103,7 @@
                             <div class="reviews__author-text">директор ООО «Роад муви»</div>
                         </div>
                     </div>
-                    <div class="zoom" data-modal="review-full">
+                    <div class="zoom" data-fancybox="video2" data-src="img/review1.jpg">
                         <img src="img/review1.jpg" alt="" />
                         <div class="zoom__btn">
                             <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
@@ -1122,7 +1120,7 @@
                             <div class="reviews__author-text">директор ООО «Роад муви»</div>
                         </div>
                     </div>
-                    <div class="video" data-fancybox="video2" data-src="img/review2.jpg">
+                    <div class="video" data-fancybox="video2" data-src="https://www.youtube.com/watch?v=JnaseAj1kME">
                         <img src="img/review2.jpg" alt="" />
                         <div class="video__play">
                             <img src="img/icons/play.svg" alt="" />
@@ -1214,7 +1212,7 @@
                     <a href="javascript:" class="link"><span>Смотреть в источнике</span></a>
                 </div>
             </div>
-            <div class="swiper-pagination anim"></div>
+            <div class="swiper-pagination anim dots"></div>
         </div>
     </div>
 </section>
@@ -1230,7 +1228,7 @@
                     <span>ООО «Лукойл»</span>
                 </div>
                 <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/sber.svg" alt="" /></div>
+                    <div class="clients__img"><img src="img/sber.svg" width="158" alt="" /></div>
                     <span>ООО «СБЕР»</span>
                 </div>
                 <div class="swiper-slide clients__item">
@@ -1250,7 +1248,7 @@
                     <span>ООО «Лукойл»</span>
                 </div>
                 <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/sber.svg" alt="" /></div>
+                    <div class="clients__img"><img src="img/sber.svg" width="158" alt="" /></div>
                     <span>ООО «СБЕР»</span>
                 </div>
                 <div class="swiper-slide clients__item">
@@ -1297,7 +1295,12 @@
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide certs__item">
-                    <div class="certs__img" data-fancybox="cert" data-src="img/cert1.jpg"><img src="img/cert1.jpg" alt="" /></div>
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert1.jpg">
+                        <div class="zoom__btn">
+                            <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
+                        </div>
+                        <img src="img/cert1.jpg" alt="" />
+                    </div>
                     <span
                         >Сертификат <br />
                         Системы менеджмента <br />
@@ -1305,7 +1308,12 @@
                     >
                 </div>
                 <div class="swiper-slide certs__item">
-                    <div class="certs__img" data-fancybox="cert" data-src="img/cert2.jpg"><img src="img/cert2.jpg" alt="" /></div>
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert2.jpg">
+                        <div class="zoom__btn">
+                            <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
+                        </div>
+                        <img src="img/cert2.jpg" alt="" />
+                    </div>
                     <span
                         >Сертификат <br />
                         Системы менеджмента <br />
@@ -1313,7 +1321,12 @@
                     >
                 </div>
                 <div class="swiper-slide certs__item">
-                    <div class="certs__img" data-fancybox="cert" data-src="img/cert3.jpg"><img src="img/cert3.jpg" alt="" /></div>
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert3.jpg">
+                        <div class="zoom__btn">
+                            <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
+                        </div>
+                        <img src="img/cert3.jpg" alt="" />
+                    </div>
                     <span
                         >Сертификат <br />
                         Системы менеджмента <br />
@@ -1321,7 +1334,12 @@
                     >
                 </div>
                 <div class="swiper-slide certs__item">
-                    <div class="certs__img" data-fancybox="cert" data-src="img/cert1.jpg"><img src="img/cert1.jpg" alt="" /></div>
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert1.jpg">
+                        <div class="zoom__btn">
+                            <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
+                        </div>
+                        <img src="img/cert1.jpg" alt="" />
+                    </div>
                     <span
                         >Сертификат <br />
                         Системы менеджмента <br />
@@ -1329,7 +1347,12 @@
                     >
                 </div>
                 <div class="swiper-slide certs__item">
-                    <div class="certs__img" data-fancybox="cert" data-src="img/cert2.jpg"><img src="img/cert2.jpg" alt="" /></div>
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert2.jpg">
+                        <div class="zoom__btn">
+                            <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
+                        </div>
+                        <img src="img/cert2.jpg" alt="" />
+                    </div>
                     <span
                         >Сертификат <br />
                         Системы менеджмента <br />
@@ -1337,7 +1360,12 @@
                     >
                 </div>
                 <div class="swiper-slide certs__item">
-                    <div class="certs__img" data-fancybox="cert" data-src="img/cert3.jpg"><img src="img/cert3.jpg" alt="" /></div>
+                    <div class="certs__img" data-fancybox="cert" data-src="img/cert3.jpg">
+                        <div class="zoom__btn">
+                            <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-zoom"></use></svg>
+                        </div>
+                        <img src="img/cert3.jpg" alt="" />
+                    </div>
                     <span
                         >Сертификат <br />
                         Системы менеджмента <br />
@@ -1345,7 +1373,7 @@
                     >
                 </div>
             </div>
-            <div class="swiper-pagination anim"></div>
+            <div class="swiper-pagination anim dots"></div>
         </div>
     </div>
 </section>
@@ -1356,6 +1384,42 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
+                <div class="swiper-slide projects__item">
+                    <img src="img/project.jpg" alt="" />
+                    <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
+                    <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
+                    <a href="javascript:" class="btn">Подробнее</a>
+                </div>
                 <div class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
@@ -1405,7 +1469,7 @@
     </div>
 
     <section class="adv">
-        <div class="container" style="background-image: url('img/banner2.jpg')">
+        <div class="container" style="background-image: url('img/banner2.png')">
             <h2>
                 Ещё больше объектов <br />
                 смотрите в разделе Проекты
@@ -1495,22 +1559,40 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide auto__item">
-                    <div class="auto__card" style="background-image: url('img/p1.jpg')">
-                        <div class="auto__name">Каток Hamm</div>
-                        <div class="auto__count">22 единицы</div>
+                <div class="swiper-slide auto__item mobile">
+                    <div class="auto__card auto__card-full">
+                        <div class="auto__num">
+                            <img src="img/31.svg" alt="" /> единица <br />
+                            дорожно-строительной<br />
+                            техники в парке
+                        </div>
+                        <div class="auto__num">
+                            <img src="img/14.svg" alt="" /> специалистов<br />
+                            обслуживают парк<br />
+                            техники
+                        </div>
                     </div>
-                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
                 </div>
                 <div class="swiper-slide auto__item">
-                    <div class="auto__card" style="background: url('img/p1.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
-                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')" data-fancybox="park" data-src="img/p1.jpg">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                </div>
+                <div class="swiper-slide auto__item">
+                    <div class="auto__card" style="background: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
+                    </div>
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
@@ -1528,45 +1610,37 @@
                             техники
                         </div>
                     </div>
-                    <div class="auto__card" style="background-image: url('img/p1.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
                 </div>
                 <div class="swiper-slide auto__item">
-                    <div class="auto__card" style="background: url('img/p1.jpg')">
+                    <div class="auto__card" style="background: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
-                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
                 </div>
                 <div class="swiper-slide auto__item">
-                    <div class="auto__card" style="background: url('img/p1.jpg')">
+                    <div class="auto__card" style="background: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
-                    <div class="auto__card" style="background-image: url('img/p2.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
                 </div>
-                <div class="swiper-slide auto__item auto__item">
-                    <div class="auto__card auto__card-full">
-                        <div class="auto__num">
-                            <img src="img/31.svg" alt="" /> единица <br />
-                            дорожно-строительной<br />
-                            техники в парке
-                        </div>
-                        <div class="auto__num">
-                            <img src="img/14.svg" alt="" /> специалистов<br />
-                            обслуживают парк<br />
-                            техники
-                        </div>
+                <div class="swiper-slide auto__item">
+                    <div class="auto__card" style="background: url('img/p1.jpg')" data-fancybox="park" data-src="img/p1.jpg">
+                        <div class="auto__name">Каток Hamm</div>
+                        <div class="auto__count">22 единицы</div>
                     </div>
-                    <div class="auto__card" style="background-image: url('img/p1.jpg')">
+                    <div class="auto__card" style="background-image: url('img/p2.jpg')" data-fancybox="park" data-src="img/p1.jpg">
                         <div class="auto__name">Каток Hamm</div>
                         <div class="auto__count">22 единицы</div>
                     </div>
@@ -1692,7 +1766,7 @@
             <a href="tel:88003332233">8 (800) 333-22-33</a>
         </div>
 
-        <img src="img/phone.png" alt="" />
+        <img src="img/phone.png" width="402" alt="" />
     </div>
 </section>
 
@@ -1700,8 +1774,8 @@
     <div class="container">
         <h2>Часто задаваемые вопросы</h2>
 
-        <div class="question">Сколько стоит выезд специалиста на объект и составление сметы?</div>
-        <div class="answer">
+        <div class="question active">Сколько стоит выезд специалиста на объект и составление сметы?</div>
+        <div class="answer active">
             Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
             современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
 
@@ -1710,8 +1784,8 @@
             сайт Вы получаете 10% скидку.
         </div>
 
-        <div class="question active">Какую смесь вы используете для укладки асфальта?</div>
-        <div class="answer active">
+        <div class="question">Какую смесь вы используете для укладки асфальта?</div>
+        <div class="answer">
             Работая с нами, Вы получаете явные преимущества в качестве, в цене и скорости сделанной работы. Данные преимущества объясняются тем, что у нас свое
             современное оборудование, накопленный опыт за 12 лет и бригада опытных сотрудников. <br /><br />
 

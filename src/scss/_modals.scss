@@ -187,7 +187,7 @@ $trans: all 0.2s ease-in-out;
             width: 47%;
 
             input {
-                margin-bottom: 17px;
+                margin-bottom: 24px;
                 width: 100%;
 
                 &:last-child {
@@ -265,6 +265,13 @@ $trans: all 0.2s ease-in-out;
         textarea {
             height: 109px;
             margin-bottom: 15px;
+        }
+    }
+
+    &[data-modal='review'] {
+        .rating {
+            margin-top: 4px;
+            margin-left: 82px;
         }
     }
 

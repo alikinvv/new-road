@@ -106,6 +106,11 @@ var specialists = new Swiper('.specialists .swiper-container', {
     prevEl: '.specialists .swiper-button-prev'
   },
   breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+      spaceBetween: 140
+    },
     768: {
       slidesPerView: 3,
       slidesPerGroup: 3,
@@ -170,6 +175,8 @@ var certs = new Swiper('.certs .swiper-container', {
   loop: true,
   breakpoints: {
     1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
       spaceBetween: 24
     },
     768: {
@@ -207,6 +214,7 @@ var projects = new Swiper('.projects .swiper-container', {
   slidesPerView: 1,
   slidesPerGroup: 1,
   spaceBetween: 24,
+  loop: true,
   breakpoints: {
     768: {
       slidesPerView: 2.1,
@@ -222,6 +230,26 @@ var projects = new Swiper('.projects .swiper-container', {
       $('.projects__text').matchHeight();
       $('.projects__company').matchHeight();
     }
+  }
+});
+var _int = new Swiper('.int.swiper-container', {
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 24,
+  loop: true,
+  breakpoints: {
+    1024: {
+      slidesPerView: 3,
+      slidesPerGroup: 3
+    },
+    768: {
+      slidesPerView: 2,
+      slidesPerGroup: 2
+    }
+  },
+  navigation: {
+    nextEl: '.items .swiper-button-next',
+    prevEl: '.items .swiper-button-prev'
   }
 });
 var productNav = new Swiper('.product__nav', {
@@ -246,6 +274,7 @@ var productNav = new Swiper('.product__nav', {
 
 var productMain = new Swiper('.product__main', {
   spaceBetween: 10,
+  loop: true,
   thumbs: {
     swiper: productNav
   },
@@ -326,16 +355,16 @@ ymaps.ready(function () {
       searchControlProvider: 'yandex#search'
     }),
     // Создаём макет содержимого.
-    MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'),
+    MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #000; font-weight: bold;">$[properties.iconContent]</div>'),
     myPlacemark = new ymaps.Placemark([55.76, 37.64], {
       balloonContent: '<span>техническая база №2</span><div>Москва, ш. Дмитровское, д. 107, к. 2</div>',
       iconContent: '1'
     }, {
       iconLayout: 'default#imageWithContent',
-      iconImageHref: 'img/point.svg',
+      iconImageHref: 'img/icons/map.svg',
       iconImageSize: [30, 42],
       iconImageOffset: [-5, -38],
-      iconContentOffset: [11, 12],
+      iconContentOffset: [10, 12],
       iconContentLayout: MyIconContentLayout
     }),
     myPlacemarkWithContent = new ymaps.Placemark([55.661574, 37.573856], {
@@ -343,7 +372,7 @@ ymaps.ready(function () {
       iconContent: '2'
     }, {
       iconLayout: 'default#imageWithContent',
-      iconImageHref: 'img/point.svg',
+      iconImageHref: 'img/icons/map.svg',
       iconImageSize: [30, 42],
       iconImageOffset: [-5, -38],
       iconContentOffset: [10, 12],
@@ -390,49 +419,57 @@ $('body').on('click', '.header__menu > a, .header__menu > div', function (e) {
     });
   }
 });
-if ($('.tabs.line .active').length > 0) {
-  $('.tabs.line .bar').stop().animate({
-    left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
-    width: $('.tabs.line .active').outerWidth()
-  });
-}
-$('body').on('mouseenter', '.tabs.line > div', function (e) {
-  $('.tabs.line .bar').stop().animate({
-    left: $(e.currentTarget).offset().left - $('.tabs.line').offset().left,
-    width: $(e.currentTarget).outerWidth()
-  });
-});
-$('body').on('mouseleave', '.tabs.line', function (e) {
-  if ($('.tabs.line .active').length > 0) {
-    $('.tabs.line .bar').stop().animate({
-      left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
-      width: $('.tabs.line .active').outerWidth()
-    });
-  } else {
-    $('.tabs.line .bar').stop().animate({
-      left: 0,
-      width: 0
-    });
-  }
-});
+
+// if ($('.tabs.line .active').length > 0) {
+//     $('.tabs.line .bar')
+//         .stop()
+//         .animate({
+//             left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
+//             width: $('.tabs.line .active').outerWidth(),
+//         });
+// }
+
+// $('body').on('mouseenter', '.tabs.line > div', (e) => {
+//     $('.tabs.line .bar')
+//         .stop()
+//         .animate({ left: $(e.currentTarget).offset().left - $('.tabs.line').offset().left, width: $(e.currentTarget).outerWidth() });
+// });
+
+// $('body').on('mouseleave', '.tabs.line', (e) => {
+//     if ($('.tabs.line .active').length > 0) {
+//         $('.tabs.line .bar')
+//             .stop()
+//             .animate({
+//                 left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
+//                 width: $('.tabs.line .active').outerWidth(),
+//             });
+//     } else {
+//         $('.tabs.line .bar').stop().animate({ left: 0, width: 0 });
+//     }
+// });
+
 $('body').on('click', '.tabs.line > div', function (e) {
-  $('.tabs.line .active').removeClass('active');
-  $(e.currentTarget).addClass('active');
-  $('.tabs.line .bar').css({
-    left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
-    width: $('.tabs.line .active').outerWidth()
-  });
+  // $('.tabs.line .active').removeClass('active');
+  // $(e.currentTarget).addClass('active');
+  // $('.tabs.line .bar').css({
+  //     left: $('.tabs.line .active').offset().left - $('.tabs.line').offset().left,
+  //     width: $('.tabs.line .active').outerWidth(),
+  // });
 });
-$('body').on('click', '.tabs div', function (e) {
+$('body').on('click', '.tabs:not(.line) div', function (e) {
   $('.tabs div').removeClass('active');
   $(e.currentTarget).addClass('active');
   $('.tab').removeClass('active');
   $(".tab[data-tab=\"".concat($(e.currentTarget).attr('data-tab'), "\"]")).addClass('active');
   $('.card__title').matchHeight();
 });
-$('body').on('click', '.product__info .link', function (e) {
-  $(e.currentTarget).remove();
+$('body').on('click', '.product__info .link:not(.active)', function (e) {
+  $(e.currentTarget).addClass('active').find('span').html('Свернуть');
   $('.product__features.hide').slideDown(300);
+});
+$('body').on('click', '.product__info .link.active', function (e) {
+  $(e.currentTarget).removeClass('active').find('span').html('Все характеристики');
+  $('.product__features.hide').slideUp(300);
 });
 
 // show modal
@@ -555,7 +592,12 @@ if ($('.datepicker').length > 0) {
 $('.hamburger').on('click', function () {
   $(this).toggleClass('active');
   $('.header__menu').toggleClass('active');
-  $('.backdrop').addClass('active');
+  $('.backdrop').toggleClass('active');
+  if (!$('.backdrop').hasClass('active')) {
+    $('.header__menu').removeClass('active').removeClass('left').removeClass('left2');
+    $('.menu__item span').parent().removeClass('show');
+    $('.menu__item.show .dropdown__wrapper > div:not(.btn):not(.show)').removeClass('show');
+  }
 });
 $('body').on('click', '.header__mobile', function (e) {
   $(e.currentTarget).toggleClass('active');
@@ -580,3 +622,19 @@ if ($(window).width() < 1280) {
   $('.breadcrumbs .container').scrollLeft(left);
   $('.product__sliders').prepend($('.product__info .h2'));
 }
+if ($(window).width >= 1024) {
+  var sticky1 = new Sticky('.top');
+  var sticky2 = new Sticky('.header');
+}
+$('body').on('click', '[data-scroll]', function (e) {
+  e.preventDefault();
+  var target = $(e.currentTarget).attr('data-scroll');
+  $('html, body').animate({
+    scrollTop: $(target).offset().top - 100
+  }, 500);
+});
+$('body').on('click', '.footer__title', function (e) {
+  if ($(window).width() < 767) {
+    $(e.currentTarget).parent().toggleClass('active');
+  }
+});

@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
     <link rel="stylesheet" href="css/daterangepicker.min.css">
-    <link rel="stylesheet" href="css/main.css?v=3">
+    <link rel="stylesheet" href="css/main.css?v=4">
 
     <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
@@ -27,11 +27,11 @@
     <div class="container">
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide">
+                <div class="swiper-slide" style="background-image: url(img/banner.png);">
                     <div class="banner__text">Акция! Асфальтирование и ремонт дорог <strong>от 390 ₽/м<sup>2</sup></strong> до конца февраля</div>
                     <a href="javascript:">Подробнее <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-more"></use></svg></a>
                 </div>
-                <div class="swiper-slide">
+                <div class="swiper-slide" style="background-image: url(img/banner.png);">
                     <div class="banner__text">Акция! Асфальтирование и ремонт дорог <strong>от 390 ₽/м<sup>2</sup></strong> до конца февраля</div>
                     <a href="javascript:">Подробнее <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-more"></use></svg></a>
                 </div>
@@ -48,7 +48,7 @@
     </div>
 </section>
 
-<section class="top">
+<section class="top" data-sticky-class="sticky">
     <div class="container">
         <div class="top__city">
             Москва <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-arrow-down"></use></svg>
@@ -84,7 +84,7 @@
     </div>
 </section>
 
-<header class="header">
+<header class="header" data-sticky-class="sticky">
     <div class="container">
         <a class="header__logo" href="/new-road/build"><img src="img/logo.svg" alt=""></a>
         <div class="header__mobile">
@@ -92,7 +92,7 @@
 
             <div class="dropdown">
                 <a href="tel:+74956878879" class="header__phone">+7 495 687-88-79</a>
-                <button class="header__call btn btn-black" data-modal="call">заказать звонок</button>
+                <a href="tel:+74956878879" class="header__phone">8 (800) 333-22-33</a>
             </div>
         </div>
         <div class="header__menu">
