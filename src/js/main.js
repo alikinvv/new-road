@@ -131,7 +131,6 @@ let auto = new Swiper('.auto .swiper-container', {
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 10,
-    loop: true,
     navigation: {
         nextEl: '.auto .swiper-button-next',
         prevEl: '.auto .swiper-button-prev',
@@ -301,7 +300,6 @@ $('body').on('click', '.header__search button', (e) => {
         if (container.has(e.target).length === 0) {
             container.removeClass('active');
             $(document).unbind('mouseup');
-            return false;
         }
     });
 
@@ -309,7 +307,6 @@ $('body').on('click', '.header__search button', (e) => {
         if (e.keyCode == 27) {
             $('.header__search').removeClass('active');
             $(document).unbind('keyup');
-            return false;
         }
     });
 
@@ -693,10 +690,10 @@ if ($(window).width() < 1280) {
     $('.product__sliders').prepend($('.product__info .h2'));
 }
 
-if ($(window).width >= 1024) {
-    var sticky1 = new Sticky('.top');
-    var sticky2 = new Sticky('.header');
-}
+// if ($(window).width >= 1024) {
+var sticky1 = new Sticky('.top');
+var sticky2 = new Sticky('.header');
+// }
 
 $('body').on('click', '[data-scroll]', (e) => {
     e.preventDefault();
