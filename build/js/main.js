@@ -19,8 +19,6 @@ var main = new Swiper('.main .swiper-container', {
   slidesPerView: 1,
   slidesPerGroup: 1,
   spaceBetween: 10,
-  centeredSlides: true,
-  loop: true,
   autoplay: {
     delay: 5000,
     disableOnInteraction: false
@@ -541,6 +539,7 @@ $('body').on('submit', 'form', function (e) {
 });
 $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 50);
 $(window).on('resize', function () {
+  $('.card__title').matchHeight();
   if ($(window).width() < 1366) {
     $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 10);
   } else {
@@ -619,12 +618,8 @@ if ($(window).width() < 1280) {
   $('.breadcrumbs .container').scrollLeft(left);
   $('.product__sliders').prepend($('.product__info .h2'));
 }
-
-// if ($(window).width >= 1024) {
 var sticky1 = new Sticky('.top');
 var sticky2 = new Sticky('.header');
-// }
-
 $('body').on('click', '[data-scroll]', function (e) {
   e.preventDefault();
   var target = $(e.currentTarget).attr('data-scroll');

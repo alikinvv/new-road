@@ -22,9 +22,10 @@ body {
     @include r(1023) {
         font-size: 15px;
     }
+
     @include r(767) {
         line-height: 1.22;
-        margin-top: 50px;
+        margin-top: 70px;
     }
 
     font-family: 'Manrope', sans-serif;
@@ -566,7 +567,6 @@ a {
 
 .top {
     @include r(1023) {
-        position: static !important;
     }
 
     @include r(767) {
@@ -928,13 +928,14 @@ a {
 
 .header {
     @include r(1023) {
-        top: 0 !important;
+        top: 38px !important;
         z-index: 90 !important;
     }
 
     @include r(767) {
         position: fixed;
         width: 100%;
+        top: 0px !important;
     }
 
     padding: 7px 0;
@@ -943,10 +944,21 @@ a {
     top: 38px !important;
 
     &[style^='position'] {
+        @include r(767) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.21);
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
         border-bottom: 3px solid rgba(0, 0, 0, 0.21);
         padding: 2px 0;
 
         .header__logo {
+            @include r(767) {
+                width: 130px;
+                height: auto;
+            }
+
             width: auto;
             height: 31px;
 
@@ -962,7 +974,8 @@ a {
 
         .header__search {
             @include r(767) {
-                display: none;
+                opacity: 1;
+                pointer-events: all;
             }
 
             opacity: 0;
@@ -1544,7 +1557,7 @@ a {
                 }
 
                 @include r(767) {
-                    width: 100%;
+                    width: calc(100% + 10px);
                     padding: 12px 9px;
                     padding-right: 45px;
                 }
@@ -2104,9 +2117,11 @@ a {
 
                 span {
                     margin-right: 10px;
+                    font-size: 12px;
                 }
             }
 
+            display: flex;
             text-align: center;
         }
 
@@ -2368,7 +2383,7 @@ a {
     &__num {
         @include r(1023) {
             width: 60px;
-            max-height: 45px;
+            height: 45px;
         }
 
         @include r(767) {
