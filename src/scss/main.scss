@@ -566,7 +566,7 @@ a {
 }
 
 .top {
-    &.sticky + .header {
+    &[style^='position'] + .header {
         position: fixed;
         width: 100%;
         @include r(767) {
