@@ -566,7 +566,46 @@ a {
 }
 
 .top {
-    @include r(1023) {
+    &.sticky + .header {
+        position: fixed;
+        width: 100%;
+        @include r(767) {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.21);
+            padding-top: 7px;
+            padding-bottom: 7px;
+        }
+
+        border-bottom: 3px solid rgba(0, 0, 0, 0.21);
+        padding: 2px 0;
+
+        .header__logo {
+            @include r(767) {
+                width: 130px;
+                height: auto;
+            }
+
+            width: auto;
+            height: 31px;
+
+            img {
+                height: inherit;
+            }
+        }
+
+        .btn {
+            font-size: 14px;
+            padding: 3px 19px;
+        }
+
+        .header__search {
+            @include r(767) {
+                opacity: 1;
+                pointer-events: all;
+            }
+
+            opacity: 0;
+            pointer-events: none;
+        }
     }
 
     @include r(767) {
@@ -934,7 +973,7 @@ a {
 
     @include r(767) {
         position: fixed;
-        width: 100%;
+        width: 100% !important;
         top: 0px !important;
     }
 
@@ -942,46 +981,6 @@ a {
     z-index: 11;
     background: #fff;
     top: 38px !important;
-
-    &[style^='position'] {
-        @include r(767) {
-            border-bottom: 1px solid rgba(0, 0, 0, 0.21);
-            padding-top: 7px;
-            padding-bottom: 7px;
-        }
-
-        border-bottom: 3px solid rgba(0, 0, 0, 0.21);
-        padding: 2px 0;
-
-        .header__logo {
-            @include r(767) {
-                width: 130px;
-                height: auto;
-            }
-
-            width: auto;
-            height: 31px;
-
-            img {
-                height: inherit;
-            }
-        }
-
-        .btn {
-            font-size: 14px;
-            padding: 3px 19px;
-        }
-
-        .header__search {
-            @include r(767) {
-                opacity: 1;
-                pointer-events: all;
-            }
-
-            opacity: 0;
-            pointer-events: none;
-        }
-    }
 
     .container {
         display: flex;
@@ -2096,7 +2095,7 @@ a {
 
                 &:nth-child(2) {
                     width: 240px;
-                    background: rgba(203, 215, 224, 0.25);
+                    background: rgba(225,231,236);
                 }
 
                 &:nth-child(3),
