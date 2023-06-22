@@ -148,7 +148,7 @@
         <div class="modal__subtitle">Работаем по всему Московскому региону</div>
             <form>
                 <div class="search">
-                    <input type="text" class="gray" placeholder="Ваш город">
+                    <input type="text" class="gray region-input" placeholder="Ваш город">
                     <button><svg><use xlink:href="img/symbol-defs.svg#icon-search"></use></svg></button>
                 </div>
                 <div class="cities">
@@ -362,6 +362,55 @@
 <script src="js/jquery.daterangepicker.min.js"></script>
 <script src="js/sticky.min.js"></script>
 <script src="js/main.js?v=8"></script>
+
+<script>ymaps.ready(function () {
+    var myMap = new ymaps.Map(
+            'map',
+            {
+                center: $(window).width() < 1280 ? ($(window).width() < 768 ? [55.76, 37.64] : [55.738805, 37.481692]) : [55.746499, 37.329568],
+                zoom: 11,
+            },
+            {
+                searchControlProvider: 'yandex#search',
+            }
+        ),
+        // Создаём макет содержимого.
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #000; font-weight: bold;">$[properties.iconContent]</div>'),
+        myPlacemark = new ymaps.Placemark(
+            [55.76, 37.64],
+            {
+                balloonContent: '<span>техническая база №2</span><div>Москва, ш. Дмитровское, д. 107, к. 2</div>',
+                iconContent: '1',
+            },
+            {
+                iconLayout: 'default#imageWithContent',
+                iconImageHref: 'img/icons/map.svg',
+                iconImageSize: [30, 42],
+                iconImageOffset: [-5, -38],
+                iconContentOffset: [10, 12],
+                iconContentLayout: MyIconContentLayout,
+            }
+        ),
+        myPlacemarkWithContent = new ymaps.Placemark(
+            [55.661574, 37.573856],
+            {
+                balloonContent: '<span>техническая база №2</span><div>Москва, ш. Дмитровское, д. 107, к. 2</div>',
+                iconContent: '2',
+            },
+            {
+                iconLayout: 'default#imageWithContent',
+                iconImageHref: 'img/icons/map.svg',
+                iconImageSize: [30, 42],
+                iconImageOffset: [-5, -38],
+                iconContentOffset: [10, 12],
+                iconContentLayout: MyIconContentLayout,
+            }
+        );
+
+    myMap.behaviors.disable('scrollZoom');
+
+    myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
+});</script>
 </body>
 
 </html>

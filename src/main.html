@@ -79,6 +79,42 @@
     </div>
 </section>
 
+<script>
+    const makeTimer = () => {
+        let endTime = new Date('12 October 2023 9:56:00 GMT+02:00');
+        endTime = Date.parse(endTime) / 1000;
+
+        let now = new Date();
+        now = Date.parse(now) / 1000;
+
+        let timeLeft = endTime - now;
+
+        let days = Math.floor(timeLeft / 86400);
+        let hours = Math.floor((timeLeft - days * 86400) / 3600);
+        let minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
+        let seconds = Math.floor(timeLeft - days * 86400 - hours * 3600 - minutes * 60);
+
+        if (hours < '10') {
+            hours = '0' + hours;
+        }
+        if (minutes < '10') {
+            minutes = '0' + minutes;
+        }
+        if (seconds < '10') {
+            seconds = '0' + seconds;
+        }
+
+        $('.days').html(days);
+        $('.hours').html(hours);
+        $('.minutes').html(minutes);
+        $('.seconds').html(seconds);
+    };
+
+    setInterval(() => {
+        makeTimer();
+    }, 1000);
+</script>
+
 <section class="services">
     <div class="container">
         <div class="services__wrapper">
@@ -966,6 +1002,7 @@
                         В рамках реализации договора по капитальному строительству автомобильной стоянки по адресу: Московская область, Химкинский район,
                         участок с кадастровым номером 50:10:0020703:42.
                     </div>
+                    <a href="javascript:" class="btn">Подробнее о проекте</a>
                 </div>
                 <div class="swiper-slide">
                     <div class="works__imgs">
@@ -977,11 +1014,12 @@
                         В рамках реализации договора по капитальному строительству автомобильной стоянки по адресу: Московская область, Химкинский район,
                         участок с кадастровым номером 50:10:0020703:42.
                     </div>
+                    <a href="javascript:" class="btn">Подробнее о проекте</a>
                 </div>
             </div>
         </div>
         <div class="works__footer">
-            <a href="javascript:" class="btn">Подробнее о проекте</a>
+            <div></div>
             <div class="slider__controls">
                 <div class="swiper-button-prev">
                     <svg class="icon"><use xlink:href="img/symbol-defs.svg#icon-slider-left"></use></svg>
@@ -1242,26 +1280,6 @@
                     <div class="clients__img"><img src="img/megapolis.png" alt="" /></div>
                     <span>ООО «Мегаполис»</span>
                 </div>
-                <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/lukoil.svg" alt="" /></div>
-                    <span>ООО «Лукойл»</span>
-                </div>
-                <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/sber.svg" width="158" alt="" /></div>
-                    <span>ООО «СБЕР»</span>
-                </div>
-                <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/konkord.png" alt="" /></div>
-                    <span>ООО «Конкорд»</span>
-                </div>
-                <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/bank.png" alt="" /></div>
-                    <span>Банк России</span>
-                </div>
-                <div class="swiper-slide clients__item">
-                    <div class="clients__img"><img src="img/megapolis.png" alt="" /></div>
-                    <span>ООО «Мегаполис»</span>
-                </div>
             </div>
         </div>
         <div class="slider__controls slider__controls-center">
@@ -1383,78 +1401,78 @@
 
         <div class="swiper-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide projects__item">
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
-                <div class="swiper-slide projects__item">
+                    <div class="btn">Подробнее</div>
+                </a>
+                <a href="javascript:" class="swiper-slide projects__item">
                     <img src="img/project.jpg" alt="" />
                     <div class="projects__company">заказчик: <strong>ЗАО «Реттиг Варме РУС»</strong></div>
                     <div class="projects__text">В ходе проекта сделали: ямочный ремонт, асфальтирование дороги и нанесение разметки.</div>
-                    <a href="javascript:" class="btn">Подробнее</a>
-                </div>
+                    <div class="btn">Подробнее</div>
+                </a>
             </div>
         </div>
         <div class="slider__controls slider__controls-center">

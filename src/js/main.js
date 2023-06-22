@@ -197,7 +197,7 @@ let certs = new Swiper('.certs .swiper-container', {
 let clients = new Swiper('.clients .swiper-container', {
     slidesPerView: 2,
     slidesPerGroup: 2,
-    spaceBetween: 24,
+    spaceBetween: 0,
     loop: true,
     breakpoints: {
         1024: {
@@ -311,40 +311,6 @@ $('body').on('click', '.header__search button', (e) => {
     $('.header__search input').focus();
 });
 
-const makeTimer = () => {
-    let endTime = new Date('12 April 2023 9:56:00 GMT+02:00');
-    endTime = Date.parse(endTime) / 1000;
-
-    let now = new Date();
-    now = Date.parse(now) / 1000;
-
-    let timeLeft = endTime - now;
-
-    let days = Math.floor(timeLeft / 86400);
-    let hours = Math.floor((timeLeft - days * 86400) / 3600);
-    let minutes = Math.floor((timeLeft - days * 86400 - hours * 3600) / 60);
-    let seconds = Math.floor(timeLeft - days * 86400 - hours * 3600 - minutes * 60);
-
-    if (hours < '10') {
-        hours = '0' + hours;
-    }
-    if (minutes < '10') {
-        minutes = '0' + minutes;
-    }
-    if (seconds < '10') {
-        seconds = '0' + seconds;
-    }
-
-    $('.days').html(days);
-    $('.hours').html(hours);
-    $('.minutes').html(minutes);
-    $('.seconds').html(seconds);
-};
-
-setInterval(() => {
-    makeTimer();
-}, 1000);
-
 let masks = document.querySelectorAll('.phone-mask');
 
 masks.forEach((el) => {
@@ -365,55 +331,6 @@ $('body').on('click', '.question', (e) => {
     e.preventDefault();
     $(e.currentTarget).toggleClass('active');
     $(e.currentTarget).next().slideToggle().toggleClass('active');
-});
-
-ymaps.ready(function () {
-    var myMap = new ymaps.Map(
-            'map',
-            {
-                center: $(window).width() < 1280 ? ($(window).width() < 768 ? [55.76, 37.64] : [55.738805, 37.481692]) : [55.746499, 37.329568],
-                zoom: 11,
-            },
-            {
-                searchControlProvider: 'yandex#search',
-            }
-        ),
-        // Создаём макет содержимого.
-        MyIconContentLayout = ymaps.templateLayoutFactory.createClass('<div style="color: #000; font-weight: bold;">$[properties.iconContent]</div>'),
-        myPlacemark = new ymaps.Placemark(
-            [55.76, 37.64],
-            {
-                balloonContent: '<span>техническая база №2</span><div>Москва, ш. Дмитровское, д. 107, к. 2</div>',
-                iconContent: '1',
-            },
-            {
-                iconLayout: 'default#imageWithContent',
-                iconImageHref: 'img/icons/map.svg',
-                iconImageSize: [30, 42],
-                iconImageOffset: [-5, -38],
-                iconContentOffset: [10, 12],
-                iconContentLayout: MyIconContentLayout,
-            }
-        ),
-        myPlacemarkWithContent = new ymaps.Placemark(
-            [55.661574, 37.573856],
-            {
-                balloonContent: '<span>техническая база №2</span><div>Москва, ш. Дмитровское, д. 107, к. 2</div>',
-                iconContent: '2',
-            },
-            {
-                iconLayout: 'default#imageWithContent',
-                iconImageHref: 'img/icons/map.svg',
-                iconImageSize: [30, 42],
-                iconImageOffset: [-5, -38],
-                iconContentOffset: [10, 12],
-                iconContentLayout: MyIconContentLayout,
-            }
-        );
-
-    myMap.behaviors.disable('scrollZoom');
-
-    myMap.geoObjects.add(myPlacemark).add(myPlacemarkWithContent);
 });
 
 // tabs .bar animation
@@ -584,13 +501,30 @@ $('body').on('click', '.menu__close', (e) => {
     }
 });
 
+$('body').on('keyup', '.region-input', (e) => {
+    $('.cities').addClass('active');
+    $('.cities a').removeClass('show');
+    if ($(e.currentTarget).val().length === 0) {
+        $('.cities').removeClass('active');
+        $('.cities__item').removeClass('hide');
+    }
+
+    for (let i = 0; i < $('.cities a').length; i++) {
+        if ($('.cities a').eq(i).text().toLowerCase().indexOf($(e.currentTarget).val().toLowerCase()) >= 0) {
+            $('.cities a').eq(i).addClass('show');
+        }
+    }
+
+    for (let k = 0; k < $('.cities__item').length; k++) {
+        if ($('.cities__item').eq(k).find('.show').length === 0) {
+            $('.cities__item').eq(k).addClass('hide');
+        }
+    }
+});
+
 // close modal on press ESC
 $(document).keyup((e) => {
     if (e.keyCode === 27 && $('.backdrop').hasClass('active')) closeModal();
-});
-
-$('body').on('submit', 'form', (e) => {
-    e.preventDefault();
 });
 
 $('.scrolltop').css('left', $('.container').offset().left + $('.container').outerWidth() + 50);
